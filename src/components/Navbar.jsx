@@ -58,7 +58,7 @@ const Navbar = () => {
                   lineHeight: 1
                 }}
               >
-                Hello <span style={{ color: 'var(--primary)' }}>Zindagi</span>
+                {/* Hello <span style={{ color: 'var(--primary)' }}>Zindagi</span> */}
               </span>
 
               <span
