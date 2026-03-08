@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Schedule from './components/Schedule';
+import Features from './components/Features';
 import News from './components/News';
 import Footer from './components/Footer';
 import About from './components/About';
 import Contact from './components/Contact';
+import SEO from './components/SEO';
+import AboutPreview from './components/AboutPreview';
+import Testimonials from './components/Testimonials';
+import NewsHero from './components/NewsHero';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -17,40 +22,55 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Home View (Hero + News/Events)
+// Home View
 const Home = () => (
   <>
+    <SEO 
+      title="Home | Hello Zindagi" 
+      description="Hello Zindagi Inc is dedicated to supporting individuals and families of Indian origin in their journey of assimilation into Australian society." 
+      url="https://hellozindagi.com.au/" 
+      keywords="Hello Zindagi, Australian Indian, Radio, Integration" 
+    />
     <Hero />
-    <Schedule />
-    <News />
+    <AboutPreview />
+    <Features />
+    <Testimonials />
   </>
 );
 
 // News & Events View
 const NewsEvents = () => (
   <div style={{ paddingTop: 'var(--nav-height)' }}>
-    <Schedule />
+    <SEO 
+      title="News & Events | Hello Zindagi" 
+      description="Stay updated with the latest news, events, and cultural exchange programs across Australia and India." 
+      url="https://hellozindagi.com.au/news" 
+      keywords="Events, News, Culture, Australia, India" 
+    />
+    <NewsHero />
     <News />
   </div>
 );
 
 function App() {
   return (
-    <Router>
-      <div className="app-wrapper" style={{ overflowX: 'hidden' }}>
-        <ScrollToTop />
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/news" element={<NewsEvents />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="app-wrapper" style={{ overflowX: 'hidden' }}>
+          <ScrollToTop />
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/news" element={<NewsEvents />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

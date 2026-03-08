@@ -1,15 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail } from 'lucide-react';
+import SEO from './SEO';
 
 const Contact = () => {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="Contact Us | Hello Zindagi" 
+        description="Get in touch with Hello Zindagi. We'd love to hear from you. Send us a message or visit our studio." 
+        url="https://hellozindagi.com.au/contact" 
+        keywords="Contact, Hello Zindagi, Address, Email, Telephone" 
+      />
+      
       <section style={{ padding: '8rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>Get in <span className="gradient-text">Touch</span></h1>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>We'd love to hear from you. Send us a message or visit our studio.</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>We'd love to hear from you. Send us a message or visit us.</p>
           </div>
 
           <div style={{
@@ -27,7 +35,7 @@ const Contact = () => {
                 border: '1px solid var(--border-glass)',
                 height: '100%'
               }}>
-                <h3 style={{ marginBottom: '2.5rem', fontSize: '1.8rem' }}>Studio Info</h3>
+                <h3 style={{ marginBottom: '2.5rem', fontSize: '1.8rem' }}>Contact Info</h3>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '2rem' }}>
                   <div style={{ color: 'var(--primary)' }}><MapPin size={24} /></div>
@@ -41,7 +49,7 @@ const Contact = () => {
                   <div style={{ color: 'var(--primary)' }}><Phone size={24} /></div>
                   <div>
                     <h4 style={{ marginBottom: '0.5rem' }}>Call Us</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>+61 2 1234 5678</p>
+                    <p style={{ color: 'var(--text-muted)' }}>+61 450310047</p>
                   </div>
                 </div>
 
@@ -49,7 +57,7 @@ const Contact = () => {
                   <div style={{ color: 'var(--primary)' }}><Mail size={24} /></div>
                   <div>
                     <h4 style={{ marginBottom: '0.5rem' }}>Email</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>hello@hezzfm.com.au</p>
+                    <p style={{ color: 'var(--text-muted)' }}>info@crestedith.com</p>
                   </div>
                 </div>
               </div>

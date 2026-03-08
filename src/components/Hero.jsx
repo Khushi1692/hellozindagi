@@ -52,71 +52,43 @@ const Hero = () => {
             display: 'inline-flex',
             alignItems: 'center',
             padding: '0.5rem 1rem',
-            background: 'rgba(239, 68, 68, 0.1)',
+            background: 'rgba(16, 185, 129, 0.1)',
             borderRadius: '100px',
-            color: '#ef4444',
+            color: 'var(--primary)',
             fontSize: '0.85rem',
             fontWeight: 700,
             marginBottom: '1.5rem',
-            border: '1px solid rgba(239, 68, 68, 0.2)'
+            border: '1px solid rgba(16, 185, 129, 0.2)'
           }}>
-            <span className="live-indicator"></span>
-            LIVE: THE MORNING VIBE WITH DJ SAM
+            <span style={{ marginRight: '8px' }}>✨</span>
+            Empowering the Australian Indian Community
           </div>
 
           <h1 style={{
-            fontSize: 'clamp(3rem, 8vw, 5rem)',
-            lineHeight: 1,
+            fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+            lineHeight: 1.1,
             marginBottom: '1.5rem',
             letterSpacing: '-2px'
           }}>
-            The Voice of <br />
-            <span className="gradient-text">The Community.</span>
+            Human, <br />
+            Happiness, <br />
+            <span className="gradient-text">Hope.</span>
           </h1>
 
           <p style={{
             fontSize: '1.2rem',
             color: 'var(--text-muted)',
-            marginBottom: '2.5rem',
-            maxWidth: '540px'
+            marginBottom: '3rem',
+            maxWidth: '540px',
+            lineHeight: 1.7
           }}>
-            Streaming local stories, world-class music, and community voices across Australia. Your daily dose of inspiration and entertainment.
+            Connecting communities through shared experiences, dialogue, and cultural pride. Hello Zindagi is your bridge between heritage and home.
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <button className="btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
-              <Play fill="white" size={20} /> Listen Live
+            <button className="btn-primary" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem' }}>
+              Discover Our Work
             </button>
-            <button style={{
-              background: 'transparent',
-              border: '1px solid var(--border-glass)',
-              color: 'var(--text-main)',
-              padding: '1rem 2rem',
-              borderRadius: '12px',
-              fontWeight: 600,
-              cursor: 'pointer'
-            }}>
-              Browse Schedule
-            </button>
-          </div>
-
-          <div style={{
-            display: 'flex',
-            gap: '3rem',
-            marginTop: '4rem'
-          }}>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span style={{ fontSize: '1.5rem', fontWeight: 800 }}>85.4K</span>
-              <span style={{ color: 'var(--text-dim)', fontSize: '0.85rem', fontWeight: 600, textTransform: 'uppercase' }}>Monthly Listeners</span>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span style={{ fontSize: '1.5rem', fontWeight: 800 }}>24/7</span>
-              <span style={{ color: 'var(--text-dim)', fontSize: '0.85rem', fontWeight: 600, textTransform: 'uppercase' }}>Live Broadcast</span>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span style={{ fontSize: '1.5rem', fontWeight: 800 }}>120+</span>
-              <span style={{ color: 'var(--text-dim)', fontSize: '0.85rem', fontWeight: 600, textTransform: 'uppercase' }}>Weekly Shows</span>
-            </div>
           </div>
         </motion.div>
 
@@ -127,64 +99,56 @@ const Hero = () => {
            style={{ position: 'relative' }}
            className="hero-image-container"
         >
-          {/* Visualizer Mockup */}
-          <div className="glass" style={{
-            padding: '2rem',
-            borderRadius: '30px',
+          {/* Decorative Visual Mockup */}
+          <div style={{
+            padding: '1.5rem',
+            borderRadius: '40px',
             position: 'relative',
             zIndex: 1,
-            boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-glass)',
+            boxShadow: '0 30px 60px rgba(0,0,0,0.5)'
           }}>
             <div style={{
               width: '100%',
-              height: '350px',
-              borderRadius: '20px',
-              background: 'linear-gradient(45deg, #1c1c22, #25252b)',
-              marginBottom: '1.5rem',
+              height: '450px',
+              borderRadius: '24px',
+              background: `url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1000') center/cover`,
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              alignItems: 'flex-end',
+              padding: '2rem',
               position: 'relative',
               overflow: 'hidden'
             }}>
-               <Mic2 size={80} color="var(--primary)" style={{ opacity: 0.2 }} />
-               
-               {/* Animated Sound Bars */}
                <div style={{
                  position: 'absolute',
-                 bottom: 0,
-                 display: 'flex',
-                 gap: '4px',
-                 alignItems: 'flex-end',
-                 padding: '0 1rem',
-                 width: '100%',
-                 height: '100px'
-               }}>
-                 {Array.from({ length: 40 }).map((_, i) => (
-                   <motion.div
-                    key={i}
-                    animate={{ height: [20, Math.random() * 80 + 20, 20] }}
-                    transition={{ repeat: Infinity, duration: 0.5 + Math.random(), delay: i * 0.05 }}
-                    style={{
-                      flex: 1,
-                      backgroundColor: i % 2 === 0 ? 'var(--primary)' : 'var(--secondary)',
-                      borderRadius: '4px 4px 0 0',
-                      opacity: 0.6
-                    }}
-                   />
-                 ))}
+                 inset: 0,
+                 background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)'
+               }} />
+               
+               <div style={{ position: 'relative', zIndex: 2 }}>
+                  <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
+                    {['Resilience', 'Culture', 'Dialogue'].map(tag => (
+                      <span key={tag} style={{
+                        background: 'rgba(255,255,255,0.1)',
+                        backdropFilter: 'blur(10px)',
+                        padding: '0.3rem 0.8rem',
+                        borderRadius: '100px',
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        color: 'white'
+                      }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 style={{ fontSize: '1.8rem', color: 'white', lineHeight: 1.2, marginBottom: '0.5rem' }}>
+                    Building an Inclusive Australia
+                  </h3>
+                  <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>
+                    Fostering belonging for generations to come.
+                  </p>
                </div>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <div>
-                <h4 style={{ fontSize: '1.2rem', marginBottom: '0.25rem' }}>The Morning Vibe</h4>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Now Playing: "Summer Days" - Casio</p>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <Volume2 size={24} style={{ color: 'var(--text-muted)' }} />
-                <Users size={24} style={{ color: 'var(--text-muted)' }} />
-              </div>
             </div>
           </div>
         </motion.div>
