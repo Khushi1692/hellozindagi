@@ -152,7 +152,7 @@ const News = () => {
                     display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: 600,
                     transition: 'gap 0.3s'
                   }}>
-                    Read Article <ArrowUpRight size={18} />
+                    <ArrowUpRight size={18} />
                   </div>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Heart, Globe, Users } from 'lucide-react';
+import communityImage from "../assets/community.jpg";
 
 const AboutPreview = () => {
   return (
@@ -67,11 +68,12 @@ const AboutPreview = () => {
                zIndex: 0
              }} />
              <img 
-               src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=800" 
+               src={communityImage}
                alt="Community Diversity" 
                onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=800" }}
                style={{
                  width: '100%',
+                 height: "400px", 
                  borderRadius: '30px',
                  position: 'relative',
                  zIndex: 1,

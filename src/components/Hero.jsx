@@ -1,6 +1,7 @@
 import React from 'react';
 import { Play, Volume2, Mic2, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -86,9 +87,9 @@ const Hero = () => {
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <button className="btn-primary" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem' }}>
+            <Link to="/news" className="btn-primary" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem', textDecoration: 'none', display: 'inline-block' }}>
               Discover Our Work
-            </button>
+            </Link>
           </div>
         </motion.div>
 

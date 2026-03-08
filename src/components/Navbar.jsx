@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, Menu, X, Search } from 'lucide-react';
+import { Radio, Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png'; // ✅ Import the logo
@@ -102,14 +102,13 @@ const Navbar = () => {
 
         {/* Right Side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-          <Search size={20} style={{ cursor: 'pointer', color: 'var(--text-muted)' }} />
-
-          <button
+          <Link
+            to="/contact"
             className="btn-primary"
-            style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}
+            style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem', textDecoration: 'none', display: 'inline-block' }}
           >
             Support Us
-          </button>
+          </Link>
 
           <Menu
             className="menu-icon"

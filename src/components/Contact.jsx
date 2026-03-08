@@ -57,7 +57,7 @@ const Contact = () => {
                   <div style={{ color: 'var(--primary)' }}><Mail size={24} /></div>
                   <div>
                     <h4 style={{ marginBottom: '0.5rem' }}>Email</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>info@crestedith.com</p>
+                    <p style={{ color: 'var(--text-muted)' }}>hellozindagiau@gmail.com</p>
                   </div>
                 </div>
               </div>

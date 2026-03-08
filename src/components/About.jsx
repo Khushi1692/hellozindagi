@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Radio, HeartHandshake, Mic2, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SEO from './SEO';
 
 const About = () => {
@@ -238,11 +239,11 @@ const About = () => {
                 Join Hello Zindagi today and contribute to a vibrant, connected, and respectful community.
               </p>
               <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-                <button className="btn-primary" style={{
-                  padding: '1.2rem 3rem', borderRadius: '12px', fontSize: '1.1rem', fontWeight: 700, border: 'none', cursor: 'pointer'
+                <Link to="/contact" className="btn-primary" style={{
+                  padding: '1.2rem 3rem', borderRadius: '12px', fontSize: '1.1rem', fontWeight: 700, border: 'none', cursor: 'pointer', textDecoration: 'none', display: 'inline-block'
                 }}>
                   Join Our Platform
-                </button>
+                </Link>
               </div>
             </div>
           </div>
