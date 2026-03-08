@@ -104,12 +104,12 @@ const Navbar = () => {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
           <Search size={20} style={{ cursor: 'pointer', color: 'var(--text-muted)' }} />
 
-          {/* <button
+          <button
             className="btn-primary"
             style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}
           >
             Support Us
-          </button> */}
+          </button>
 
           <Menu
             className="menu-icon"
