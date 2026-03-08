@@ -11,9 +11,27 @@ echo "Adding files to git..."
 git add . || exit 1
 
 echo "Committing..."
-git commit -m "button add auto deploy" || exit 1
+git commit -m "test auto deploy" || exit 1
 
 echo "Pushing to repo..."
 git push || exit 1
 
-echo "Deployment completed successfully!"
+echo "Updating index.html..."
+
+cat << 'EOF' > index.html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hello-zindagi</title>
+  </head>
+  <body>
+    <div id="root"></div>
+     <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+EOF
+
+echo "index.html updated successfully!"
