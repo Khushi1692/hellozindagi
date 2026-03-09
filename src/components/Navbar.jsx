@@ -102,6 +102,16 @@ const Navbar = () => {
 
         {/* Right Side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <div className="desktop-support-btn">
+            <Link
+              to="/contact"
+              className="btn-primary"
+              style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem', textDecoration: 'none', display: 'inline-flex' }}
+            >
+              Support Us
+            </Link>
+          </div>
+
           {isOpen ? (
             <X
               className="menu-icon"
@@ -155,6 +165,14 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="btn-primary"
+              style={{ padding: '0.8rem', fontSize: '1rem', textDecoration: 'none', textAlign: 'center', marginTop: '1rem' }}
+            >
+              Support Us
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
