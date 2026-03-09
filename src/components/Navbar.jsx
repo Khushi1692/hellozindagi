@@ -128,19 +128,20 @@ const Navbar = () => {
            initial={{ opacity: 0, y: -10 }}
            animate={{ opacity: 1, y: 0 }}
            style={{
-             position: 'absolute',
+             position: 'fixed',
              top: 'var(--nav-height)',
              left: 0,
              right: 0,
-             background: 'var(--bg-glass)',
-             backdropFilter: 'blur(12px)',
+             bottom: 0,
+             height: 'calc(100vh - var(--nav-height))',
+             background: 'var(--bg-main)',
              borderTop: '1px solid var(--border-glass)',
-             borderBottom: '1px solid var(--border-glass)',
-             padding: '1.5rem 2rem',
+             padding: '2rem',
              display: 'flex',
              flexDirection: 'column',
              gap: '1.5rem',
-             zIndex: 999
+             zIndex: 999,
+             overflowY: 'auto'
            }}
            className="mobile-menu"
         >

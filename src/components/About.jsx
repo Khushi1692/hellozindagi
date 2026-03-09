@@ -261,13 +261,15 @@ const About = () => {
           .about-hero-grid .about-hero-label {
             justify-content: center;
           }
-          .mission-grid { grid-template-columns: 1fr !important; gap: 4rem !important; }
+          .mission-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
           .mission-grid > div:first-child { position: static !important; }
-<<<<<<< HEAD
-=======
-          .about-hero-grid { grid-template-columns: 1fr !important; }
->>>>>>> 2d7864df0141ac14fd352abab7c36c39862cdc57
           .verticals-container { flex-direction: column; }
+          
+          /* Reduce padding on mobile */
+          section {
+            padding-top: 4rem !important;
+            padding-bottom: 4rem !important;
+          }
         }
       `}</style>
     </div>

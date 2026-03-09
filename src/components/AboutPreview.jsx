@@ -88,9 +88,13 @@ const AboutPreview = () => {
 
       <style>{`
         @media (max-width: 968px) {
+          section {
+            padding-top: 4rem !important;
+            padding-bottom: 4rem !important;
+          }
           .about-preview-grid { 
             grid-template-columns: 1fr !important; 
-            gap: 4rem !important; 
+            gap: 3rem !important; 
             text-align: center;
           }
           .about-preview-grid p {
