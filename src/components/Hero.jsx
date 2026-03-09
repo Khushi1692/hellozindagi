@@ -38,16 +38,13 @@ const Hero = () => {
         zIndex: -1
       }} />
 
-      <div className="container" style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '4rem',
-        alignItems: 'center'
-      }}>
+      <div className="container hero-grid">
         <motion.div
+          className="hero-text-top"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          style={{ gridArea: 'top' }}
         >
           <div style={{
             display: 'inline-flex',
@@ -75,7 +72,15 @@ const Hero = () => {
             Happiness, <br />
             <span className="gradient-text">Hope.</span>
           </h1>
+        </motion.div>
 
+        <motion.div
+          className="hero-text-bottom"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          style={{ gridArea: 'bottom' }}
+        >
           <p style={{
             fontSize: '1.2rem',
             color: 'var(--text-muted)',
@@ -86,7 +91,7 @@ const Hero = () => {
             Connecting communities through shared experiences, dialogue, and cultural pride. Hello Zindagi is your bridge between heritage and home.
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', justifyContent: 'inherit' }} className="hero-btn-container">
             <Link to="/news" className="btn-primary" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem', textDecoration: 'none', display: 'inline-block' }}>
               Discover Our Work
             </Link>
@@ -97,7 +102,7 @@ const Hero = () => {
            initial={{ opacity: 0, scale: 0.8 }}
            animate={{ opacity: 1, scale: 1 }}
            transition={{ duration: 1, delay: 0.2 }}
-           style={{ position: 'relative' }}
+           style={{ position: 'relative', gridArea: 'image' }}
            className="hero-image-container"
         >
           {/* Decorative Visual Mockup */}
@@ -127,8 +132,8 @@ const Hero = () => {
                  background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)'
                }} />
                
-               <div style={{ position: 'relative', zIndex: 2 }}>
-                  <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
+               <div style={{ position: 'relative', zIndex: 2, textAlign: 'left' }}>
+                  <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                     {['Resilience', 'Culture', 'Dialogue'].map(tag => (
                       <span key={tag} style={{
                         background: 'rgba(255,255,255,0.1)',
@@ -156,9 +161,39 @@ const Hero = () => {
       </div>
 
       <style>{`
+        .hero-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 
+            "top image"
+            "bottom image";
+          gap: 1rem 4rem;
+          align-items: center;
+        }
+        .hero-text-top { align-self: flex-end; }
+        .hero-text-bottom { align-self: flex-start; }
+
         @media (max-width: 968px) {
-          .container { grid-template-columns: 1fr !important; gap: 4rem !important; }
-          .hero-image-container { order: -1; }
+          .hero-grid { 
+            grid-template-columns: 1fr !important; 
+            grid-template-areas: 
+              "top"
+              "bottom"
+              "image" !important;
+            gap: 2rem !important; 
+            text-align: center;
+          }
+          .hero-text-top {
+            margin-top: 3rem;
+          }
+          .hero-btn-container {
+            justify-content: center !important;
+          }
+          .hero-text-bottom p {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+          }
         }
       `}</style>
     </section>

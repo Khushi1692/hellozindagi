@@ -27,7 +27,7 @@ const Navbar = () => {
         display: 'flex',
         alignItems: 'center',
         zIndex: 1000,
-        padding: '0 2rem'
+        padding: '0'
       }}
     >
       <div
@@ -104,31 +104,88 @@ const Navbar = () => {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
           <Link
             to="/contact"
-            className="btn-primary"
+            className="btn-primary support-btn"
             style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem', textDecoration: 'none', display: 'inline-block' }}
           >
             Support Us
           </Link>
 
-          <Menu
+          <div
             className="menu-icon"
-            size={24}
             style={{ cursor: 'pointer', display: 'none' }}
             onClick={() => setIsOpen(!isOpen)}
-          />
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <motion.div
+           initial={{ opacity: 0, y: -10 }}
+           animate={{ opacity: 1, y: 0 }}
+           style={{
+             position: 'absolute',
+             top: 'var(--nav-height)',
+             left: 0,
+             right: 0,
+             background: 'var(--bg-glass)',
+             backdropFilter: 'blur(12px)',
+             borderTop: '1px solid var(--border-glass)',
+             borderBottom: '1px solid var(--border-glass)',
+             padding: '1.5rem 2rem',
+             display: 'flex',
+             flexDirection: 'column',
+             gap: '1.5rem',
+             zIndex: 999
+           }}
+           className="mobile-menu"
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              style={{
+                fontWeight: 600,
+                fontSize: '1.1rem',
+                color: location.pathname === link.path ? 'var(--primary)' : 'var(--text-main)',
+                textDecoration: 'none'
+              }}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            style={{
+              fontWeight: 600,
+              fontSize: '1.1rem',
+              color: 'var(--primary)',
+              textDecoration: 'none',
+              paddingTop: '1rem',
+              borderTop: '1px solid var(--border-glass)'
+            }}
+          >
+            Support Us
+          </Link>
+        </motion.div>
+      )}
 
       {/* Responsive CSS */}
       <style>{`
         @media (min-width: 768px) {
           .nav-links { display: flex !important; }
           .menu-icon { display: none !important; }
+          .mobile-menu { display: none !important; }
         }
 
         @media (max-width: 767px) {
           .nav-links { display: none !important; }
           .menu-icon { display: block !important; }
+          .support-btn { display: none !important; }
         }
       `}</style>
     </nav>

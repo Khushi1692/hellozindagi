@@ -74,6 +74,7 @@ const AboutPreview = () => {
                style={{
                  width: '100%',
                  height: "400px", 
+                 objectFit: 'cover',
                  borderRadius: '30px',
                  position: 'relative',
                  zIndex: 1,
@@ -87,7 +88,21 @@ const AboutPreview = () => {
 
       <style>{`
         @media (max-width: 968px) {
-          .about-preview-grid { grid-template-columns: 1fr !important; gap: 4rem !important; }
+          .about-preview-grid { 
+            grid-template-columns: 1fr !important; 
+            gap: 4rem !important; 
+            text-align: center;
+          }
+          .about-preview-grid p {
+            text-align: center;
+          }
+          .about-preview-grid ul {
+            align-items: flex-start;
+          }
+          .about-preview-grid li {
+            text-align: left;
+            justify-content: flex-start;
+          }
         }
       `}</style>
     </section>

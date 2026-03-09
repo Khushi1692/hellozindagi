@@ -56,14 +56,14 @@ const About = () => {
           zIndex: 0
         }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className="container about-hero-grid" style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
           
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+            <div className="about-hero-label" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
               <span style={{ fontSize: '1.2rem', color: 'var(--primary)', fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' }}>
                 Our Story
               </span>
@@ -253,9 +253,16 @@ const About = () => {
       <style>{`
         .verticals-container::-webkit-scrollbar { display: none; }
         @media (max-width: 968px) {
+          .about-hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+            text-align: center;
+          }
+          .about-hero-grid .about-hero-label {
+            justify-content: center;
+          }
           .mission-grid { grid-template-columns: 1fr !important; gap: 4rem !important; }
           .mission-grid > div:first-child { position: static !important; }
-          .container > div:first-child { grid-template-columns: 1fr !important; }
           .verticals-container { flex-direction: column; }
         }
       `}</style>

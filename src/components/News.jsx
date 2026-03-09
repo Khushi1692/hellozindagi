@@ -52,8 +52,9 @@ const News = () => {
         
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-          gap: '3rem'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))',
+          gap: '3rem',
+          justifyItems: 'center'
         }}>
           {newsItems.map((news, index) => (
             <motion.article
@@ -117,7 +118,7 @@ const News = () => {
               
               {/* Content Body */}
               <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                <div className="card-meta" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--primary)', fontSize: '0.85rem', fontWeight: 600 }}>
                     <Calendar size={14} /> {news.date}
                   </div>
@@ -136,10 +137,11 @@ const News = () => {
                 </p>
                 
                 {/* Footer of Card */}
-                <div style={{ 
+                <div className="card-footer" style={{ 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'space-between',
+                  gap: '1rem',
                   borderTop: '1px solid rgba(255,255,255,0.05)',
                   paddingTop: '1.5rem',
                   marginTop: 'auto'
@@ -162,6 +164,10 @@ const News = () => {
       </div>
 
       <style>{`
+        .news-card {
+          width: 100%;
+          max-width: 500px;
+        }
         .news-card:hover {
           transform: translateY(-10px);
           box-shadow: 0 30px 60px rgba(0,0,0,0.5);
@@ -173,6 +179,10 @@ const News = () => {
         .news-card:hover .read-more-btn {
           gap: 0.8rem;
           color: white;
+        }
+
+        @media (max-width: 768px) {
+          /* Removing forced center text to keep card content left aligned on mobile */
         }
       `}</style>
     </section>
