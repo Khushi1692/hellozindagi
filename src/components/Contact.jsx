@@ -71,7 +71,7 @@ const Contact = () => {
                 borderRadius: '30px', 
                 border: '1px solid var(--border-glass)'
               }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                <div className="contact-form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                   <div>
                     <label style={{ display: 'block', marginBottom: '0.75rem', fontSize: '0.9rem', fontWeight: 600 }}>Full Name</label>
                     <input type="text" placeholder="John Doe" style={{
@@ -116,6 +116,9 @@ const Contact = () => {
       <style>{`
         @media (max-width: 968px) {
           .contact-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          .contact-form-row { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>

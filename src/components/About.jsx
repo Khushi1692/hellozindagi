@@ -56,7 +56,7 @@ const About = () => {
           zIndex: 0
         }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className="container about-hero-grid" style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
           
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -255,7 +255,7 @@ const About = () => {
         @media (max-width: 968px) {
           .mission-grid { grid-template-columns: 1fr !important; gap: 4rem !important; }
           .mission-grid > div:first-child { position: static !important; }
-          .container > div:first-child { grid-template-columns: 1fr !important; }
+          .about-hero-grid { grid-template-columns: 1fr !important; }
           .verticals-container { flex-direction: column; }
         }
       `}</style>

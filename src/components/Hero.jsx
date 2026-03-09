@@ -38,7 +38,7 @@ const Hero = () => {
         zIndex: -1
       }} />
 
-      <div className="container" style={{
+      <div className="container hero-container" style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         gap: '4rem',
@@ -157,7 +157,7 @@ const Hero = () => {
 
       <style>{`
         @media (max-width: 968px) {
-          .container { grid-template-columns: 1fr !important; gap: 4rem !important; }
+          .hero-container { grid-template-columns: 1fr !important; gap: 4rem !important; }
           .hero-image-container { order: -1; }
         }
       `}</style>
