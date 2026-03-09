@@ -52,10 +52,11 @@ const Navbar = () => {
               <span
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '1.4rem',
+                  fontSize: 'clamp(1rem, 4vw, 1.4rem)',
                   fontWeight: 800,
                   letterSpacing: '-0.5px',
-                  lineHeight: 1
+                  lineHeight: 1,
+                  whiteSpace: 'nowrap'
                 }}
               >
                 Hello <span style={{ color: 'var(--primary)' }}>Zindagi</span>
@@ -63,12 +64,13 @@ const Navbar = () => {
 
               <span
                 style={{
-                  fontSize: '0.75rem',
+                  fontSize: 'clamp(0.5rem, 2vw, 0.75rem)',
                   color: 'var(--text-dim)',
                   fontWeight: 600,
                   marginTop: '0.25rem',
                   letterSpacing: '1px',
-                  textTransform: 'uppercase'
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap'
                 }}
               >
                 Human • Happiness • Hope
