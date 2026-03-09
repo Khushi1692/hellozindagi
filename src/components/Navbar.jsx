@@ -1,6 +1,6 @@
 import React from 'react';
 import { Radio, Menu, X } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png'; // ✅ Import the logo
 
@@ -52,10 +52,11 @@ const Navbar = () => {
               <span
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '1.4rem',
+                  fontSize: 'clamp(1rem, 4vw, 1.4rem)',
                   fontWeight: 800,
                   letterSpacing: '-0.5px',
-                  lineHeight: 1
+                  lineHeight: 1,
+                  whiteSpace: 'nowrap'
                 }}
               >
                 Hello <span style={{ color: 'var(--primary)' }}>Zindagi</span>
@@ -63,12 +64,13 @@ const Navbar = () => {
 
               <span
                 style={{
-                  fontSize: '0.75rem',
+                  fontSize: 'clamp(0.5rem, 2vw, 0.75rem)',
                   color: 'var(--text-dim)',
                   fontWeight: 600,
                   marginTop: '0.25rem',
                   letterSpacing: '1px',
-                  textTransform: 'uppercase'
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap'
                 }}
               >
                 Human • Happiness • Hope
@@ -176,14 +178,15 @@ const Navbar = () => {
 
       {/* Responsive CSS */}
       <style>{`
-        @media (min-width: 768px) {
+        @media (min-width: 1025px) {
           .nav-links { display: flex !important; }
           .menu-icon { display: none !important; }
           .mobile-menu { display: none !important; }
         }
 
-        @media (max-width: 767px) {
+        @media (max-width: 1024px) {
           .nav-links { display: none !important; }
+          .desktop-support-btn { display: none !important; }
           .menu-icon { display: block !important; }
           .support-btn { display: none !important; }
         }

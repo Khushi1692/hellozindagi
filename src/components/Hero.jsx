@@ -174,26 +174,8 @@ const Hero = () => {
         .hero-text-bottom { align-self: flex-start; }
 
         @media (max-width: 968px) {
-          .hero-grid { 
-            grid-template-columns: 1fr !important; 
-            grid-template-areas: 
-              "top"
-              "bottom"
-              "image" !important;
-            gap: 2rem !important; 
-            text-align: center;
-          }
-          .hero-text-top {
-            margin-top: 3rem;
-          }
-          .hero-btn-container {
-            justify-content: center !important;
-          }
-          .hero-text-bottom p {
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-          }
+          .container { grid-template-columns: 1fr !important; gap: 4rem !important; }
+          .hero-image-container { order: -1; }
         }
       `}</style>
     </section>

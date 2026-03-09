@@ -21,7 +21,7 @@ const LivePlayer = () => {
         alignItems: 'center'
       }}
     >
-      <div className="container" style={{
+      <div className="container live-player-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(200px, 1fr) 2fr minmax(200px, 1fr)',
         alignItems: 'center',
@@ -95,7 +95,7 @@ const LivePlayer = () => {
         </div>
 
         {/* Extra Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '1.5rem' }}>
+        <div className="extra-actions" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '1.5rem' }}>
           <Volume2 size={20} className="player-btn" style={{ color: 'var(--text-muted)' }} />
           <Share2 size={20} className="player-btn" style={{ color: 'var(--text-muted)' }} />
           <Maximize2 size={20} className="player-btn" style={{ color: 'var(--text-muted)' }} />
@@ -107,10 +107,10 @@ const LivePlayer = () => {
         .player-btn:hover { color: var(--text-main) !important; }
         
         @media (max-width: 800px) {
-          grid-template-columns: 1fr auto !important;
+          .live-player-grid { grid-template-columns: 1fr auto !important; }
         }
         @media (max-width: 600px) {
-           .container { grid-template-columns: 1fr !important; }
+           .live-player-grid { grid-template-columns: 1fr !important; }
            .extra-actions { display: none !important; }
         }
       `}</style>

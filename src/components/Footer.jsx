@@ -7,6 +7,7 @@ const Footer = () => {
     <footer style={{ padding: '6rem 0 2rem 0', background: 'var(--bg-main)', borderTop: '1px solid var(--border-glass)' }}>
       <div className="container">
         <div
+          className="footer-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -155,11 +156,11 @@ const Footer = () => {
         footer a:hover { color: var(--primary) !important; }
 
         @media (max-width: 968px) {
-          footer .grid { grid-template-columns: 1fr 1fr !important; }
+          footer .footer-grid { grid-template-columns: 1fr 1fr !important; }
         }
 
         @media (max-width: 600px) {
-          footer .grid { grid-template-columns: 1fr !important; }
+          footer .footer-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </footer>

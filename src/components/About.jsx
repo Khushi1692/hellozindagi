@@ -263,6 +263,10 @@ const About = () => {
           }
           .mission-grid { grid-template-columns: 1fr !important; gap: 4rem !important; }
           .mission-grid > div:first-child { position: static !important; }
+<<<<<<< HEAD
+=======
+          .about-hero-grid { grid-template-columns: 1fr !important; }
+>>>>>>> 2d7864df0141ac14fd352abab7c36c39862cdc57
           .verticals-container { flex-direction: column; }
         }
       `}</style>
