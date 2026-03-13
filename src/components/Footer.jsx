@@ -99,22 +99,22 @@ const Footer = () => {
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <Phone size={18} color="var(--primary)" />
                 <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                  +61 450310047
+                   04687 93340
                 </span>
               </li>
 
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <Mail size={18} color="var(--primary)" />
                 <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                  info@crestedith.com
+                  hellozindagiau@gmail.com
                 </span>
               </li>
 
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <MapPin size={18} color="var(--primary)" />
                 <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                  123 Media Street <br />
-                  Melbourne, VIC 3000
+                   1/191 Scoresby Road, <br />
+                  Boronia, Victoria 3155
                 </span>
               </li>
             </ul>

@@ -41,7 +41,7 @@ const Contact = () => {
                   <div style={{ color: 'var(--primary)' }}><MapPin size={24} /></div>
                   <div>
                     <h4 style={{ marginBottom: '0.5rem' }}>Address</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>123 Media Street, Melbourne, VIC 3000</p>
+                    <p style={{ color: 'var(--text-muted)' }}> 1/191 Scoresby Road, Boronia, Victoria 3155</p>
                   </div>
                 </div>
 
@@ -49,7 +49,7 @@ const Contact = () => {
                   <div style={{ color: 'var(--primary)' }}><Phone size={24} /></div>
                   <div>
                     <h4 style={{ marginBottom: '0.5rem' }}>Call Us</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>+61 450310047</p>
+                    <p style={{ color: 'var(--text-muted)' }}>04687 93340</p>
                   </div>
                 </div>
 

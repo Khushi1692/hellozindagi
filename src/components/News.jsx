@@ -1,35 +1,38 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Calendar, User, MapPin } from 'lucide-react';
+import { ArrowUpRight, Calendar, User, MapPin, Play, Pause } from 'lucide-react';
+import holi from "../assets/holi.jpg";
+import diwali from "../assets/diwali.jpg";
+import youth_dance from "../assets/youth_dance.jpg";
+import womensDayVideo from "../assets/womensDayVideo.mp4";
 
 const newsItems = [
   { 
     id: 1, 
-    date: 'Oct 24, 2026', 
-    title: 'New Community Center Opening in Melbourne', 
-    excerpt: 'Join us this weekend for the grand opening ceremony of the new community hub designed to support Indian families adapting to life in Australia.',
+    date: 'March 08, 2026', 
+    title: 'Celebrating the Strength and Inspiration of Women', 
+    excerpt: "From the heart of our community platform Hello Zindagi, we wish all the incredible women a very Happy International Women’s Day.May we continue to inspire and grow together, supported by all men & women in our lives.",
     category: 'Community',
-    img: 'https://images.unsplash.com/photo-1629853922339-b9d9c2cb62bc?auto=format&fit=crop&q=80&w=800',
+    video: womensDayVideo,
     readTime: '4 min read',
     author: 'Hello Zindagi'
   },
   { 
     id: 2, 
-    date: 'Nov 02, 2026', 
-    title: 'Top 10 Emerging Artists from the Subcontinent', 
-    excerpt: 'Discover the fresh voices making waves in the Australian music scene this year, featured in our upcoming Hello Zindagi Radio Show.',
+    date: 'March 04, 2026', 
+    title: 'Joyful Holi Celebration Brings Colours and Community Together', 
+    excerpt: 'A vibrant Holi celebration was held in Melbourne at Jells Park, where families and children from the Indian community gathered to enjoy colours, music and dancing. The festive atmosphere was filled with joy and togetherness, while traditional food and sweets like Gujiya added a special touch to the celebration.',
     category: 'Culture & Arts',
-    img: 'https://images.unsplash.com/photo-1493225457124-a1a2a5f5f9af?auto=format&fit=crop&q=80&w=800',
-    readTime: '6 min read',
+    img: holi,
     author: 'Editorial Team'
   },
   { 
     id: 3, 
-    date: 'Nov 15, 2026', 
-    title: 'Diwali Celebration: Cross-Cultural Night', 
-    excerpt: 'The annual festival returns with more food, music, and vibrant performances. Be part of our biggest event fostering understanding and social cohesion.',
+    date: 'October 16, 2026', 
+    title: 'Diwali Celebration: Cross-Cultural', 
+    excerpt: "The annual festival returns with more food, music, and vibrant performances. Be part of our biggest event fostering understanding and social cohesion. Come together to celebrate culture, community spirit, and enjoy a joyful day with family and friends.",
     category: 'Events',
-    img: 'https://images.unsplash.com/photo-1514222134-b57cbf8ce694?auto=format&fit=crop&q=80&w=800',
+    img: diwali,
     readTime: '3 min read',
     author: 'Events Desk'
   },
@@ -37,13 +40,91 @@ const newsItems = [
     id: 4, 
     date: 'Dec 05, 2026', 
     title: 'Youth Mentorship Program Launch', 
-    excerpt: 'We are thrilled to launch a new mentorship initiative connecting established professionals with the upcoming generation of Indian Australians.',
+    excerpt: 'Showcasing the energy, passion, and creativity of our youth through a vibrant dance performance that celebrates culture, talent, and self-expression. The performance highlights the dedication and enthusiasm of young performers while bringing the community together to appreciate art, rhythm, and cultural spirit.',
     category: 'Empowerment',
-    img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800',
+    img: youth_dance,
     readTime: '5 min read',
     author: 'Hello Zindagi'
   }
 ];
+
+const MediaRenderer = ({ videoSrc, imgSrc }) => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlay = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
+  if (videoSrc) {
+    return (
+      <>
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          playsInline
+          className="img-bg"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            transition: 'transform 0.5s ease'
+          }}
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+        <button
+          onClick={togglePlay}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            background: 'rgba(0, 0, 0, 0.6)',
+            border: 'none',
+            borderRadius: '50%',
+            width: '50px',
+            height: '50px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            color: 'white',
+            zIndex: 10,
+            backdropFilter: 'blur(5px)'
+          }}
+        >
+          {isPlaying ? <Pause size={24} fill="currentColor" /> : <Play size={24} fill="currentColor" />}
+        </button>
+      </>
+    );
+  }
+
+  return (
+    <div 
+      className="img-bg"
+      style={{
+        position: 'absolute',
+        inset: 0,
+        background: `url('${imgSrc}') center/cover`,
+        transition: 'transform 0.5s ease'
+      }} 
+    />
+  );
+};
 
 const News = () => {
   return (
@@ -77,25 +158,18 @@ const News = () => {
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease'
               }}
             >
-              {/* Image Header */}
               <div className="news-image-wrapper" style={{
                 height: '240px',
                 position: 'relative',
                 overflow: 'hidden'
               }}>
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: `url('${news.img}') center/cover`,
-                  transition: 'transform 0.5s ease',
-                  className: 'img-bg'
-                }} />
+                <MediaRenderer videoSrc={news.video} imgSrc={news.img} />
                 
                 {/* Overlay gradient */}
                 <div style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(to top, rgba(16, 185, 129, 0.4), transparent)'
+                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent)'
                 }} />
 
                 <div style={{
@@ -171,7 +245,7 @@ const News = () => {
         .news-card:hover {
           transform: translateY(-10px);
           box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-          border-color: rgba(16, 185, 129, 0.3);
+          border-color: rgba(255, 255, 255, 0.1);
         }
         .news-card:hover .news-image-wrapper > div:first-child {
           transform: scale(1.05);
