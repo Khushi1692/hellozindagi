@@ -14,7 +14,6 @@ const newsItems = [
     excerpt: "From the heart of our community platform Hello Zindagi, we wish all the incredible women a very Happy International Women’s Day.May we continue to inspire and grow together, supported by all men & women in our lives.",
     category: 'Community',
     video: womensDayVideo,
-    readTime: '4 min read',
     author: 'Hello Zindagi'
   },
   { 
@@ -33,7 +32,6 @@ const newsItems = [
     excerpt: "The annual festival returns with more food, music, and vibrant performances. Be part of our biggest event fostering understanding and social cohesion. Come together to celebrate culture, community spirit, and enjoy a joyful day with family and friends.",
     category: 'Events',
     img: diwali,
-    readTime: '3 min read',
     author: 'Events Desk'
   },
   {
@@ -43,7 +41,6 @@ const newsItems = [
     excerpt: 'Showcasing the energy, passion, and creativity of our youth through a vibrant dance performance that celebrates culture, talent, and self-expression. The performance highlights the dedication and enthusiasm of young performers while bringing the community together to appreciate art, rhythm, and cultural spirit.',
     category: 'Empowerment',
     img: youth_dance,
-    readTime: '5 min read',
     author: 'Hello Zindagi'
   }
 ];
