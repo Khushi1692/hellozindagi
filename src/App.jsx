@@ -23,6 +23,18 @@ const ScrollToTop = () => {
 };
 
 // Home View
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Hello Zindagi",
+  "url": "https://hellozindagi.com.au/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://hellozindagi.com.au/news?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
 const Home = () => (
   <>
     <SEO 
@@ -30,6 +42,7 @@ const Home = () => (
       description="Hello Zindagi Inc is dedicated to supporting individuals and families of Indian origin in their journey of assimilation into Australian society." 
       url="https://hellozindagi.com.au/" 
       keywords="Hello Zindagi, Australian Indian, Radio, Integration" 
+      schemaMarkup={homeSchema}
     />
     <Hero />
     <AboutPreview />
@@ -39,6 +52,14 @@ const Home = () => (
 );
 
 // News & Events View
+const newsSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "News & Events | Hello Zindagi",
+  "url": "https://hellozindagi.com.au/news",
+  "description": "Stay updated with the latest news, events, and cultural exchange programs across Australia and India."
+};
+
 const NewsEvents = () => (
   <div style={{ paddingTop: 'var(--nav-height)' }}>
     <SEO 
@@ -46,6 +67,7 @@ const NewsEvents = () => (
       description="Stay updated with the latest news, events, and cultural exchange programs across Australia and India." 
       url="https://hellozindagi.com.au/news" 
       keywords="Events, News, Culture, Australia, India" 
+      schemaMarkup={newsSchema}
     />
     <NewsHero />
     <News />

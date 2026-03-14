@@ -104,13 +104,15 @@ const Navbar = () => {
 
         {/* Right Side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-          <Link
-            to="/contact"
+          <a
+            href="https://www.facebook.com/groups/1792626044901308"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary support-btn"
             style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem', textDecoration: 'none', display: 'inline-block' }}
           >
             Support Us
-          </Link>
+          </a>
 
           <div
             className="menu-icon"
@@ -160,8 +162,10 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link
-            to="/contact"
+          <a
+            href="https://www.facebook.com/groups/1792626044901308"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             style={{
               fontWeight: 600,
@@ -173,7 +177,7 @@ const Navbar = () => {
             }}
           >
             Support Us
-          </Link>
+          </a>
         </motion.div>
       )}
 

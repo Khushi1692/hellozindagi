@@ -14,7 +14,8 @@ const newsItems = [
     excerpt: "From the heart of our community platform Hello Zindagi, we wish all the incredible women a very Happy International Women’s Day.May we continue to inspire and grow together, supported by all men & women in our lives.",
     category: 'Community',
     video: womensDayVideo,
-    author: 'Hello Zindagi'
+    author: 'Hello Zindagi',
+    link: 'https://www.facebook.com/share/v/189Vq6MTPt/'
   },
   { 
     id: 2, 
@@ -23,7 +24,8 @@ const newsItems = [
     excerpt: 'A vibrant Holi celebration was held in Melbourne at Jells Park, where families and children from the Indian community gathered to enjoy colours, music and dancing. The festive atmosphere was filled with joy and togetherness, while traditional food and sweets like Gujiya added a special touch to the celebration.',
     category: 'Culture & Arts',
     img: holi,
-    author: 'Editorial Team'
+    author: 'Editorial Team',
+    link: 'https://www.facebook.com/share/p/1achBtV5Lp/'
   },
   { 
     id: 3, 
@@ -32,7 +34,8 @@ const newsItems = [
     excerpt: "The annual festival returns with more food, music, and vibrant performances. Be part of our biggest event fostering understanding and social cohesion. Come together to celebrate culture, community spirit, and enjoy a joyful day with family and friends.",
     category: 'Events',
     img: diwali,
-    author: 'Events Desk'
+    author: 'Events Desk',
+    link: 'https://youtu.be/Y1waSvnD9Wk'
   },
   {
     id: 4, 
@@ -41,7 +44,8 @@ const newsItems = [
     excerpt: 'Showcasing the energy, passion, and creativity of our youth through a vibrant dance performance that celebrates culture, talent, and self-expression. The performance highlights the dedication and enthusiasm of young performers while bringing the community together to appreciate art, rhythm, and cultural spirit.',
     category: 'Empowerment',
     img: youth_dance,
-    author: 'Hello Zindagi'
+    author: 'Hello Zindagi',
+    link: 'https://www.facebook.com/share/p/1Nqn1j8FMA/?mibextid=wwXIfr'
   }
 ];
 
@@ -111,12 +115,17 @@ const MediaRenderer = ({ videoSrc, imgSrc }) => {
   }
 
   return (
-    <div 
+    <img 
+      src={imgSrc}
+      loading="lazy"
+      alt="Card graphic"
       className="img-bg"
       style={{
         position: 'absolute',
         inset: 0,
-        background: `url('${imgSrc}') center/cover`,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
         transition: 'transform 0.5s ease'
       }} 
     />
@@ -221,12 +230,21 @@ const News = () => {
                     <User size={16} /> {news.author}
                   </div>
                   
-                  <div className="read-more-btn" style={{ 
-                    display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: 600,
-                    transition: 'gap 0.3s'
-                  }}>
-                    <ArrowUpRight size={18} />
-                  </div>
+                  {news.link ? (
+                    <a href={news.link} target="_blank" rel="noopener noreferrer" className="read-more-btn" style={{ 
+                      display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: 600,
+                      transition: 'gap 0.3s', textDecoration: 'none'
+                    }}>
+                      <ArrowUpRight size={18} />
+                    </a>
+                  ) : (
+                    <div className="read-more-btn" style={{ 
+                      display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: 600,
+                      transition: 'gap 0.3s'
+                    }}>
+                      <ArrowUpRight size={18} />
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.article>

@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Radio, HeartHandshake, Mic2, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from './SEO';
+import founder1 from "../assets/founder1.jpg";
+import founder2 from "../assets/founder2.jpg";
 
 const About = () => {
   const { scrollYProgress } = useScroll();
@@ -27,6 +29,14 @@ const About = () => {
     }
   ];
 
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Us | Hello Zindagi",
+    "url": "https://hellozindagi.com.au/about",
+    "description": "Learn more about Hello Zindagi and our mission to support the Indian community in Australia."
+  };
+
   return (
     <div style={{ paddingTop: 'var(--nav-height)', background: 'var(--bg-main)' }}>
       <SEO 
@@ -34,6 +44,7 @@ const About = () => {
         description="Learn more about Hello Zindagi Inc, our vision, mission, and how we deliver community impact." 
         url="https://hellozindagi.com.au/about" 
         keywords="About Us, Vision, Mission, Radio, Integration" 
+        schemaMarkup={aboutSchema}
       />
 
       {/* Modern Hero Section with Typography Focus */}
@@ -217,8 +228,59 @@ const About = () => {
         </div>
       </section>
 
+      {/* Founders Section */}
+      <section style={{ padding: '8rem 0', background: '#0f1115' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2 style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Meet our <span className="gradient-text">Leaders</span></h2>
+            <p style={{ color: 'var(--text-dim)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
+              The visionaries behind Hello Zindagi.
+            </p>
+          </div>
+          <div style={{ display: 'flex', gap: '3rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            {[
+              { name: "Ruchi Sharma", title: "Founding Member", img: founder2 },
+              { name: "Veena Barsiwal", title: "Founding Member", img:founder1},
+              
+            ].map((founder, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.2 }}
+                viewport={{ once: true }}
+                style={{
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border-glass)',
+                  borderRadius: '30px',
+                  padding: '2.5rem',
+                  textAlign: 'center',
+                  width: '320px',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
+                }}
+              >
+                <img 
+                  src={founder.img} 
+                  alt={founder.name} 
+                  style={{ 
+                    width: '150px', 
+                    height: '150px', 
+                    borderRadius: '50%', 
+                    objectFit: 'cover', 
+                    marginBottom: '1.5rem', 
+                    border: '4px solid var(--primary)' 
+                  }} 
+                />
+                <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>{founder.name}</h3>
+                <p style={{ color: 'var(--primary)', fontWeight: 600, fontSize: '1.1rem' }}>{founder.title}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section style={{ padding: '0 0 6rem 0' }}>
+      <section style={{ padding: '4rem 0 6rem 0' }}>
         <div className="container">
           <div style={{ 
             background: 'linear-gradient(135deg, rgba(22, 22, 26, 0.9), rgba(16, 185, 129, 0.15))', 

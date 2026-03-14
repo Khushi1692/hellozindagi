@@ -124,7 +124,7 @@ const Features = () => {
                 {feat.desc}
               </p>
 
-              <Link to="/about" style={{ 
+              <Link to="/news" style={{ 
                 display: 'inline-flex', 
                 alignItems: 'center', 
                 gap: '0.5rem', 
