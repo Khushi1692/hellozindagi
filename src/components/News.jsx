@@ -73,6 +73,7 @@ const MediaRenderer = ({ videoSrc, imgSrc }) => {
         <video
           ref={videoRef}
           autoPlay
+          muted
           loop
           playsInline
           className="img-bg"

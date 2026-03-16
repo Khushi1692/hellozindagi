@@ -34,9 +34,17 @@ const Footer = () => {
             </p>
 
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              {[Facebook, Twitter, Instagram, Youtube].map((Icon, idx) => (
-                <div
+              {[
+                { Icon: Facebook, url: 'https://www.facebook.com/groups/1792626044901308' },
+                { Icon: Twitter, url: '#' },
+                { Icon: Instagram, url: '#' },
+                { Icon: Youtube, url: '#' }
+              ].map(({ Icon, url }, idx) => (
+                <a
                   key={idx}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     width: '36px',
                     height: '36px',
@@ -47,12 +55,13 @@ const Footer = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     cursor: 'pointer',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.2s ease',
+                    textDecoration: 'none'
                   }}
                   className="social-icon"
                 >
                   <Icon size={16} color="var(--text-muted)" />
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -82,9 +91,9 @@ const Footer = () => {
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
               {['Become a Volunteer', 'Membership', 'Advertising', 'Donate'].map((l) => (
                 <li key={l}>
-                  <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                  <Link to="/contact" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
                     {l}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
