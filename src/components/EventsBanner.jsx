@@ -4,61 +4,59 @@ import { Calendar, PlayCircle } from 'lucide-react';
 
 const EventsBanner = () => {
   return (
-    <section style={{ padding: '6rem 0', background: 'var(--bg-main)' }}>
+    <section style={{ padding: '5rem 0', background: 'var(--bg-main)' }}>
       <div className="container">
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           style={{
-            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(99, 102, 241, 0.15))',
-            borderRadius: '40px',
+            background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))',
+            borderRadius: 'var(--radius-xl)',
             padding: '4rem 3rem',
             position: 'relative',
-            overflow: 'hidden',
-            border: '1px solid var(--border-glass)'
+            overflow: 'hidden'
           }}
         >
-          {/* Background Elements */}
-          <div style={{ position: 'absolute', right: '-10%', top: '-20%', width: '400px', height: '400px', background: 'var(--primary)', filter: 'blur(150px)', opacity: 0.2 }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'url("https://www.transparenttextures.com/patterns/cubes.png")', opacity: 0.08 }} />
           
           <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
             <div style={{ 
-              background: 'rgba(255,255,255,0.1)', 
-              padding: '1rem', 
+              background: 'rgba(255,255,255,0.15)', 
+              padding: '0.75rem', 
               borderRadius: '50%', 
-              marginBottom: '1.5rem',
-              backdropFilter: 'blur(10px)',
+              marginBottom: '1.25rem',
               color: 'white'
             }}>
-              <Calendar size={40} />
+              <Calendar size={32} />
             </div>
             
-            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '1rem', lineHeight: 1.2 }}>
-              Stay Connected with <br /> <span className="gradient-text">Upcoming Events</span>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)', marginBottom: '0.75rem', lineHeight: 1.2, color: 'white', letterSpacing: '-0.5px' }}>
+              Stay Connected with <br /> Upcoming Events
             </h2>
             
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '600px', marginBottom: '2.5rem' }}>
+            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', maxWidth: '550px', marginBottom: '2rem' }}>
               From cross-cultural workshops to massive community exchange programs, immerse yourself in experiences that celebrate heritage and belonging.
             </p>
             
-            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <button className="btn-primary" style={{ padding: '1rem 2rem' }}>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <button className="btn-primary" style={{ padding: '0.85rem 1.75rem', background: 'white', color: 'var(--primary-dark)' }}>
                 View Master Calendar
               </button>
               <button style={{
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.2)',
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.3)',
                 color: 'white',
-                padding: '1rem 2rem',
-                borderRadius: '12px',
+                padding: '0.85rem 1.75rem',
+                borderRadius: 'var(--radius-sm)',
                 fontWeight: 600,
+                fontSize: '0.95rem',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.5rem'
               }}>
-                <PlayCircle size={20} /> Watch Past Highlights
+                <PlayCircle size={18} /> Watch Past Highlights
               </button>
             </div>
           </div>

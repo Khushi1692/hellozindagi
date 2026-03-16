@@ -153,14 +153,14 @@ const News = () => {
               className="news-card"
               style={{
                 background: 'var(--bg-card)',
-                borderRadius: '30px',
-                border: '1px solid var(--border-glass)',
+                borderRadius: 'var(--radius-lg)',
+                border: '1px solid var(--border)',
                 overflow: 'hidden',
                 cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                boxShadow: 'var(--shadow-sm)',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease'
               }}
             >
@@ -197,22 +197,22 @@ const News = () => {
               </div>
               
               {/* Content Body */}
-              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <div className="card-meta" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--primary)', fontSize: '0.85rem', fontWeight: 600 }}>
                     <Calendar size={14} /> {news.date}
                   </div>
-                  <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--text-dim)' }} />
-                  <div style={{ color: 'var(--text-dim)', fontSize: '0.85rem', fontWeight: 500 }}>
+                  <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'var(--text-muted)' }} />
+                  <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 500 }}>
                     {news.readTime}
                   </div>
                 </div>
 
-                <h4 style={{ fontSize: '1.5rem', color: 'var(--text-main)', lineHeight: 1.3, marginBottom: '1rem' }}>
+                <h4 style={{ fontSize: '1.3rem', color: 'var(--text-main)', lineHeight: 1.3, marginBottom: '0.75rem' }}>
                   {news.title}
                 </h4>
                 
-                <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '2rem', flexGrow: 1 }}>
+                <p style={{ color: 'var(--text-body)', fontSize: '0.95rem', lineHeight: 1.65, marginBottom: '1.5rem', flexGrow: 1 }}>
                   {news.excerpt}
                 </p>
                 
@@ -222,11 +222,11 @@ const News = () => {
                   alignItems: 'center', 
                   justifyContent: 'space-between',
                   gap: '1rem',
-                  borderTop: '1px solid rgba(255,255,255,0.05)',
-                  paddingTop: '1.5rem',
+                  borderTop: '1px solid var(--border-light)',
+                  paddingTop: '1.25rem',
                   marginTop: 'auto'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-dim)', fontSize: '0.9rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
                     <User size={16} /> {news.author}
                   </div>
                   
@@ -258,20 +258,18 @@ const News = () => {
           max-width: 500px;
         }
         .news-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-          border-color: rgba(255, 255, 255, 0.1);
+          transform: translateY(-6px);
+          box-shadow: var(--shadow-lg);
         }
         .news-card:hover .news-image-wrapper > div:first-child {
           transform: scale(1.05);
         }
         .news-card:hover .read-more-btn {
           gap: 0.8rem;
-          color: white;
+          color: var(--primary);
         }
 
         @media (max-width: 768px) {
-          /* Removing forced center text to keep card content left aligned on mobile */
         }
       `}</style>
     </section>

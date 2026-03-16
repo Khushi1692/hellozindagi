@@ -1,8 +1,8 @@
 import React from 'react';
-import { Radio, Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/logo.png'; // ✅ Import the logo
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -41,34 +41,33 @@ const Navbar = () => {
       >
         {/* Logo */}
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <img
-              src={logo}   // ✅ Use imported logo
+              src={logo}
               alt="Hello Zindagi Logo"
-              style={{ height: '60px', objectFit: 'contain' }}
+              style={{ height: '48px', objectFit: 'contain' }}
             />
-
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1rem, 4vw, 1.4rem)',
+                  fontSize: 'clamp(1rem, 4vw, 1.3rem)',
                   fontWeight: 800,
                   letterSpacing: '-0.5px',
                   lineHeight: 1,
-                  whiteSpace: 'nowrap'
+                  whiteSpace: 'nowrap',
+                  color: 'var(--text-main)'
                 }}
               >
                 Hello <span style={{ color: 'var(--primary)' }}>Zindagi</span>
               </span>
-
               <span
                 style={{
-                  fontSize: 'clamp(0.5rem, 2vw, 0.75rem)',
-                  color: 'var(--text-dim)',
-                  fontWeight: 600,
-                  marginTop: '0.25rem',
-                  letterSpacing: '1px',
+                  fontSize: 'clamp(0.5rem, 2vw, 0.7rem)',
+                  color: 'var(--text-muted)',
+                  fontWeight: 500,
+                  marginTop: '0.2rem',
+                  letterSpacing: '0.5px',
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap'
                 }}
@@ -80,16 +79,18 @@ const Navbar = () => {
         </motion.div>
 
         {/* Desktop Nav */}
-        <div style={{ display: 'none', gap: '2.5rem' }} className="nav-links">
+        <div style={{ display: 'none', gap: '2rem', alignItems: 'center' }} className="nav-links">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               style={{
-                fontWeight: 600,
-                fontSize: '0.95rem',
+                fontWeight: 500,
+                fontSize: '0.9rem',
                 color: location.pathname === link.path ? 'var(--primary)' : 'var(--text-muted)',
-                transition: 'color 0.3s'
+                transition: 'color 0.2s',
+                position: 'relative',
+                padding: '0.25rem 0'
               }}
               onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
               onMouseLeave={(e) =>
@@ -103,20 +104,20 @@ const Navbar = () => {
         </div>
 
         {/* Right Side */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <a
             href="https://www.facebook.com/groups/1792626044901308"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary support-btn"
-            style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem', textDecoration: 'none', display: 'inline-block' }}
+            style={{ padding: '0.55rem 1.2rem', fontSize: '0.85rem', textDecoration: 'none', display: 'inline-flex' }}
           >
             Support Us
           </a>
 
           <div
             className="menu-icon"
-            style={{ cursor: 'pointer', display: 'none' }}
+            style={{ cursor: 'pointer', display: 'none', color: 'var(--text-main)' }}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -137,7 +138,7 @@ const Navbar = () => {
              bottom: 0,
              height: 'calc(100vh - var(--nav-height))',
              background: 'var(--bg-main)',
-             borderTop: '1px solid var(--border-glass)',
+             borderTop: '1px solid var(--border)',
              padding: '2rem',
              display: 'flex',
              flexDirection: 'column',
@@ -156,7 +157,9 @@ const Navbar = () => {
                 fontWeight: 600,
                 fontSize: '1.1rem',
                 color: location.pathname === link.path ? 'var(--primary)' : 'var(--text-main)',
-                textDecoration: 'none'
+                textDecoration: 'none',
+                padding: '0.5rem 0',
+                borderBottom: '1px solid var(--border-light)'
               }}
             >
               {link.name}
@@ -167,13 +170,11 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
+            className="btn-primary"
             style={{
-              fontWeight: 600,
-              fontSize: '1.1rem',
-              color: 'var(--primary)',
-              textDecoration: 'none',
-              paddingTop: '1rem',
-              borderTop: '1px solid var(--border-glass)'
+              marginTop: '1rem',
+              justifyContent: 'center',
+              textDecoration: 'none'
             }}
           >
             Support Us

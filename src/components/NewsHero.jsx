@@ -4,37 +4,35 @@ import { motion } from 'framer-motion';
 const NewsHero = () => {
   return (
     <section style={{ 
-      padding: '8rem 0 4rem 0',
+      padding: '6rem 0 3rem 0',
       background: 'var(--bg-main)',
-      position: 'relative',
-      overflow: 'hidden'
+      position: 'relative'
     }}>
-      <div style={{
-        position: 'absolute',
-        top: '0',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '100%',
-        maxWidth: '1200px',
-        height: '400px',
-        background: 'radial-gradient(ellipse at top, rgba(16, 185, 129, 0.15) 0%, transparent 70%)',
-        zIndex: 0
-      }} />
-
-      <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-        <motion.h6 
+      <div className="container" style={{ textAlign: 'center' }}>
+        <motion.span 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          style={{ color: 'var(--primary)', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '1.5rem', fontWeight: 700 }}
+          style={{ 
+            color: 'var(--primary)', 
+            fontSize: '0.8rem',
+            letterSpacing: '2px', 
+            textTransform: 'uppercase', 
+            fontWeight: 600,
+            background: 'var(--primary-light)',
+            padding: '0.3rem 0.8rem',
+            borderRadius: '4px',
+            display: 'inline-block',
+            marginBottom: '1rem'
+          }}
         >
           Updates & Announcements
-        </motion.h6>
+        </motion.span>
         
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          style={{ fontSize: 'clamp(3rem, 6vw, 4.5rem)', marginBottom: '1.5rem', lineHeight: 1.1, letterSpacing: '-1px' }}
+          style={{ fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', marginBottom: '1rem', lineHeight: 1.1, letterSpacing: '-1px', color: 'var(--text-main)' }}
         >
           The Latest Pulse of <br />
           <span className="gradient-text">Our Community.</span>
@@ -44,21 +42,16 @@ const NewsHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          style={{ color: 'var(--text-muted)', fontSize: '1.25rem', maxWidth: '700px', margin: '0 auto 4rem auto', lineHeight: 1.7 }}
+          style={{ color: 'var(--text-muted)', fontSize: '1.15rem', maxWidth: '650px', margin: '0 auto 3rem auto', lineHeight: 1.7 }}
         >
           Stay informed about upcoming cross-cultural festivals, community milestones, radio highlights, and stories that matter most to us.
         </motion.p>
         
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          style={{
-            height: '1px',
-            width: '100%',
-            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)'
-          }}
-        />
+        <div style={{
+          height: '1px',
+          width: '100%',
+          background: 'linear-gradient(90deg, transparent, var(--border), transparent)'
+        }} />
       </div>
     </section>
   );

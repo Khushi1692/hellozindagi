@@ -20,7 +20,7 @@ const Schedule = () => {
             <h6 style={{ color: 'var(--primary)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '1rem' }}>Programming</h6>
             <h2 style={{ fontSize: '3rem' }}>Today's <span className="gradient-text">Lineup</span></h2>
           </div>
-          <p style={{ color: 'var(--text-dim)', maxWidth: '400px', textAlign: 'right' }}>
+          <p style={{ color: 'var(--text-muted)', maxWidth: '400px', textAlign: 'right' }}>
             Catch your favorite hosts and discover new music throughout the day.
           </p>
         </div>
@@ -41,7 +41,7 @@ const Schedule = () => {
                 background: 'var(--bg-card)',
                 padding: '2rem',
                 borderRadius: '24px',
-                border: '1px solid var(--border-glass)',
+                border: '1px solid var(--border)',
                 position: 'relative',
                 overflow: 'hidden'
               }}
@@ -51,7 +51,8 @@ const Schedule = () => {
                 position: 'absolute',
                 top: '1.5rem',
                 right: '1.5rem',
-                background: 'rgba(255,255,255,0.05)',
+                background: 'var(--bg-main)',
+                border: '1px solid var(--border)',
                 padding: '0.4rem 0.8rem',
                 borderRadius: '8px',
                 fontSize: '0.75rem',
