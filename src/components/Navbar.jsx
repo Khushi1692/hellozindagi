@@ -51,7 +51,7 @@ const Navbar = () => {
               <span
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.2rem, 4vw, 1.3rem)',
+                  fontSize: 'clamp(1.3125rem, 4vw, 1.3125rem)',
                   fontWeight: 800,
                   letterSpacing: '-0.5px',
                   lineHeight: 1,
@@ -63,7 +63,7 @@ const Navbar = () => {
               </span>
               <span
                 style={{
-                  fontSize: 'clamp(0.6rem, 2vw, 0.7rem)',
+                  fontSize: 'clamp(0.75rem, 2vw, 0.75rem)',
                   color: 'var(--text-muted)',
                   fontWeight: 500,
                   marginTop: '0.2rem',

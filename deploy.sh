@@ -11,7 +11,7 @@ echo "Adding files to git..."
 git add . || exit 1
 
 echo "Committing..."
-git commit -m "final deploye with seo and working email" || exit 1
+git commit -m "change in mobile screen" || exit 1
 
 echo "Pushing to repo..."
 git push || exit 1
