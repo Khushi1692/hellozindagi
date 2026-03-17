@@ -52,12 +52,15 @@ const newsItems = [
 const MediaRenderer = ({ videoSrc, imgSrc }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (videoRef.current) {
       if (videoRef.current.paused) {
+        videoRef.current.muted = false;
+        setIsMuted(false);
         videoRef.current.play();
         setIsPlaying(true);
       } else {

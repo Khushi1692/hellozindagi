@@ -477,7 +477,7 @@ const About = () => {
       {/* CTA Section */}
       <section style={{ padding: '4rem 0 6rem 0' }}>
         <div className="container">
-          <div style={{ 
+          <div className="about-cta-box" style={{ 
             background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))', 
             padding: '4.5rem 3rem', 
             borderRadius: 'var(--radius-xl)', 
@@ -548,6 +548,20 @@ const About = () => {
             gap: 2rem !important;
             padding: 2rem !important;
             text-align: center;
+          }
+          .about-cta-box {
+            padding: 2.5rem 1.5rem !important;
+          }
+          .about-cta-box h2 {
+            font-size: 1.75rem !important;
+          }
+          .about-cta-box p {
+            font-size: 0.95rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+          .about-cta-box .cta-btn {
+            padding: 0.75rem 1.5rem !important;
+            font-size: 0.9rem !important;
           }
           section {
             padding-top: 4rem !important;
