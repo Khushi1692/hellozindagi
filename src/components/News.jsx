@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Calendar, User, MapPin, Play, Pause } from 'lucide-react';
-import holi from "../assets/holi.jpg";
-import diwali from "../assets/diwali.jpg";
-import youth_dance from "../assets/youth_dance.jpg";
+import holi from "../assets/holi.png";
+import diwali from "../assets/diwali.png";
+import youth_dance from "../assets/youth_dance.png";
 import womensDayVideo from "../assets/womensDayVideo.mp4";
 
 const newsItems = [

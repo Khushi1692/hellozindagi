@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { Radio, HeartHandshake, Mic2, Star, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from './SEO';
-import founder1 from "../assets/founder1.jpg";
-import founder2 from "../assets/founder2.jpg";
+
+import presidentImg from "../assets/president.png";
+import secretaryImg from "../assets/secretary.png";
+import boardMemberImg from "../assets/board_member.png";
 
 const About = () => {
   const focusAreas = [
@@ -28,6 +30,43 @@ const About = () => {
       desc: "Nurturing creativity, expression, and talent via events and exchange programs.",
       color: "#ea580c",
       bg: "#ffedd5"
+    }
+  ];
+
+  const leaders = [
+    {
+      name: "Ruchi Sharma",
+      role: "Founder & President",
+      image: presidentImg,
+      accentColor: "var(--primary)",
+      accentBg: "var(--primary-light)",
+      bio: [
+        "Ruchi Sharma is a passionate community leader, cultural advocate, and radio host committed to building stronger, more inclusive communities through conversation, connection, and collaboration.",
+        "Deeply driven by the philosophy of HuHaHo — Human Happiness & Hope, Ruchi is a Co-Founder of HuHaHo, a holistic wellbeing initiative that encourages people to stay happy while keeping hope alive.",
+        "With a natural ability to connect people and ideas, Ruchi believes in the power of storytelling, cultural exchange, and grassroots leadership. Her work continues to inspire communities to celebrate diversity, build empathy, and strengthen the social fabric that binds us all."
+      ]
+    },
+    {
+      name: "Rahul Agrawal",
+      role: "Secretary",
+      image: secretaryImg,
+      accentColor: "#4f46e5",
+      accentBg: "#e0e7ff",
+      bio: [
+        "Rahul Agrawal is an Information Technology consultant based in Melbourne, Australia. Having grown up in India and worked across several countries before settling in Australia, Rahul brings a global perspective shaped by diverse cultural experiences.",
+        "He is actively engaged with local community groups and participates in cultural and social initiatives."
+      ]
+    },
+    {
+      name: "Parul Chaturvedi",
+      role: "Board Member",
+      image: boardMemberImg,
+      accentColor: "#059669",
+      accentBg: "#d1fae5",
+      bio: [
+        "Parul Chaturvedi is a software developer based in Australia. Passionate about social issues affecting immigrant communities, she believes strongly in fostering understanding and respect between cultures.",
+        "Having experienced the journey of settling into a new country herself, Parul hopes to contribute to building a supportive community where individuals and families of Indian origin feel empowered as they integrate into Australian society."
+      ]
     }
   ];
 
@@ -293,146 +332,145 @@ const About = () => {
               Leadership
             </span>
             <h2 style={{ fontSize: '2.75rem', marginBottom: '0.75rem', letterSpacing: '-1px' }}>Founding <span className="gradient-text">Visionary</span></h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '550px', margin: '0 auto' }}>
+              Meet the passionate leaders behind Hello Zindagi's mission.
+            </p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="founder-spotlight"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1.4fr',
-              gap: '4rem',
-              alignItems: 'center',
-              background: 'var(--bg-card)',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--radius-xl)',
-              padding: '3.5rem',
-              boxShadow: 'var(--shadow-lg)',
-              maxWidth: '900px',
-              margin: '0 auto',
-              position: 'relative',
-              overflow: 'hidden'
-            }}
-          >
-            {/* Subtle corner accent */}
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '120px',
-              height: '120px',
-              background: 'linear-gradient(135deg, var(--primary-light) 0%, transparent 60%)',
-              borderRadius: '0 0 100% 0',
-              opacity: 0.5
-            }} />
-
-            {/* Photo side */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}
-            >
-              <div style={{ position: 'relative', display: 'inline-block' }}>
-                {/* Decorative ring */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', maxWidth: '1000px', margin: '0 auto' }}>
+            {leaders.map((leader, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: idx * 0.15 }}
+                viewport={{ once: true }}
+                className="leader-card"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '280px 1fr',
+                  gap: '3rem',
+                  alignItems: 'center',
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius-xl)',
+                  padding: '3rem',
+                  boxShadow: 'var(--shadow-lg)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                {/* Subtle corner accent */}
                 <div style={{
                   position: 'absolute',
-                  inset: '-12px',
-                  borderRadius: '50%',
-                  border: '2px dashed var(--primary)',
-                  opacity: 0.25,
-                  animation: 'spin 25s linear infinite'
+                  top: 0,
+                  left: 0,
+                  width: '120px',
+                  height: '120px',
+                  background: `linear-gradient(135deg, ${leader.accentBg} 0%, transparent 60%)`,
+                  borderRadius: '0 0 100% 0',
+                  opacity: 0.6
                 }} />
-                <img 
-                  src={founder2} 
-                  alt="Ruchi Sharma" 
-                  style={{ 
-                    width: '220px', 
-                    height: '220px', 
-                    borderRadius: '50%', 
-                    objectFit: 'cover', 
-                    border: '4px solid var(--bg-card)',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.12), 0 0 0 2px var(--primary-light)',
-                    display: 'block'
-                  }} 
-                />
-              </div>
-              <h3 style={{ 
-                fontSize: '1.6rem', 
-                marginTop: '1.5rem', 
-                marginBottom: '0.25rem', 
-                color: 'var(--text-main)', 
-                fontWeight: 700 
-              }}>
-                Ruchi Sharma
-              </h3>
-              <p style={{ 
-                color: 'var(--primary)', 
-                fontWeight: 600, 
-                fontSize: '0.95rem',
-                letterSpacing: '0.5px'
-              }}>
-                Founding Member
-              </p>
-            </motion.div>
 
-            {/* Content side */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              viewport={{ once: true }}
-              style={{ position: 'relative', zIndex: 1 }}
-            >
-              {/* Large decorative quote mark */}
-              <span style={{
-                fontSize: '6rem',
-                lineHeight: 1,
-                color: 'var(--primary)',
-                opacity: 0.12,
-                fontFamily: 'Georgia, serif',
-                position: 'absolute',
-                top: '-1.5rem',
-                left: '-0.5rem',
-                fontWeight: 700,
-                userSelect: 'none'
-              }}>
-                "
-              </span>
+                {/* Photo side */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 + idx * 0.1 }}
+                  viewport={{ once: true }}
+                  style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}
+                >
+                  <div style={{ position: 'relative', display: 'inline-block' }}>
+                    {/* Decorative ring */}
+                    <div style={{
+                      position: 'absolute',
+                      inset: '-12px',
+                      borderRadius: '50%',
+                      border: `2px dashed ${leader.accentColor}`,
+                      opacity: 0.25,
+                      animation: 'spin 25s linear infinite'
+                    }} />
+                    <img 
+                      src={leader.image} 
+                      alt={leader.name} 
+                      style={{ 
+                        width: '200px', 
+                        height: '200px', 
+                        borderRadius: '50%', 
+                        objectFit: 'cover', 
+                        border: '4px solid var(--bg-card)',
+                        boxShadow: `0 8px 32px rgba(0,0,0,0.12), 0 0 0 2px ${leader.accentBg}`,
+                        display: 'block'
+                      }} 
+                    />
+                  </div>
+                  <h3 style={{ 
+                    fontSize: '1.5rem', 
+                    marginTop: '1.25rem', 
+                    marginBottom: '0.25rem', 
+                    color: 'var(--text-main)', 
+                    fontWeight: 700 
+                  }}>
+                    {leader.name}
+                  </h3>
+                  <p style={{ 
+                    color: leader.accentColor, 
+                    fontWeight: 600, 
+                    fontSize: '0.9rem',
+                    letterSpacing: '0.5px',
+                    background: leader.accentBg,
+                    display: 'inline-block',
+                    padding: '0.25rem 0.75rem',
+                    borderRadius: '20px'
+                  }}>
+                    {leader.role}
+                  </p>
+                </motion.div>
 
-              <p style={{ 
-                fontSize: '1.15rem', 
-                color: 'var(--text-body)', 
-                lineHeight: 1.85, 
-                fontStyle: 'italic',
-                marginBottom: '1.5rem',
-                paddingTop: '1rem',
-                position: 'relative'
-              }}>
-                Hello Zindagi was born from the belief that every individual deserves a sense of belonging, no matter where they call home. Our mission is to bridge cultures and build lasting connections.
-              </p>
+                {/* Content side */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.35 + idx * 0.1 }}
+                  viewport={{ once: true }}
+                  style={{ position: 'relative', zIndex: 1 }}
+                >
+                  {/* Large decorative quote mark */}
+                  <span style={{
+                    fontSize: '5rem',
+                    lineHeight: 1,
+                    color: leader.accentColor,
+                    opacity: 0.1,
+                    fontFamily: 'Georgia, serif',
+                    position: 'absolute',
+                    top: '-1rem',
+                    left: '-0.5rem',
+                    fontWeight: 700,
+                    userSelect: 'none'
+                  }}>
+                    "
+                  </span>
 
-              <div style={{ 
-                height: '2px', 
-                width: '60px', 
-                background: 'linear-gradient(90deg, var(--primary), var(--secondary))', 
-                borderRadius: '2px', 
-                marginBottom: '1.5rem' 
-              }} />
-
-              <p style={{ 
-                fontSize: '1rem', 
-                color: 'var(--text-muted)', 
-                lineHeight: 1.75 
-              }}>
-                With a deep passion for community empowerment and cross-cultural understanding, Ruchi Sharma leads Hello Zindagi's initiatives to uplift and inspire individuals and families across Australia.
-              </p>
-            </motion.div>
-          </motion.div>
+                  <div style={{ paddingTop: '1rem', position: 'relative' }}>
+                    {leader.bio.map((paragraph, pIdx) => (
+                      <p 
+                        key={pIdx}
+                        style={{ 
+                          fontSize: '1rem', 
+                          color: 'var(--text-body)', 
+                          lineHeight: 1.8, 
+                          marginBottom: pIdx < leader.bio.length - 1 ? '1rem' : 0
+                        }}
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -489,8 +527,9 @@ const About = () => {
           box-shadow: var(--shadow-lg);
           transform: translateY(-4px);
         }
-        .founder-spotlight:hover {
+        .leader-card:hover {
           box-shadow: var(--shadow-xl);
+          transform: translateY(-3px);
         }
         .cta-btn:hover {
           transform: translateY(-2px);
@@ -504,7 +543,7 @@ const About = () => {
           }
           .mission-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
           .mission-grid > div:first-child { position: static !important; }
-          .founder-spotlight {
+          .leader-card {
             grid-template-columns: 1fr !important;
             gap: 2rem !important;
             padding: 2rem !important;
