@@ -4,19 +4,24 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Priya Sharma",
-    role: "Community Member",
-    content: "Hello Zindagi has been my anchor since moving to Australia. The events they organize not only help us stay connected to our roots but also build bridges with the wider Australian community. It truly gives us happiness and hope."
+    name: "Dr Rethika Ravi",
+    role: "Guest",
+    content: "It was a wonderful experience for my dad and myself to be part of Hello Zindagi! It’s a powerful medium to get together people from diverse backgrounds to share their perspectives and experiences with the wider community! Wishing Hello Zindagi the very best in the great work that they are doing and also for all their future endeavours! "
   },
   {
-    name: "Dr. Arjun Patel",
-    role: "Local Volunteer",
-    content: "The impact this organization makes through their cross-cultural integration programs is astounding. Getting to share our stories on the Hello Zindagi Radio Show amplifies voices that often go unheard."
+    name: "Inderjit Jasal",
+    role: "President ISCA",
+    content: "Hello Zindagi connects with wider indian community across all ages and brings breath of fresh air into homes for young n old to enjoy the variety of stories shared by the dedicated Hello Zindagi team.Keep up with good work."
   },
+  // {
+  //   name: "Saleha Singh",
+  //   role: "Guest",
+  //   content: "I had the pleasure of being a guest on Hello Zindagi in 2025. Hosts created a welcoming space and made the conversation easy and natural, while staying on track. The hour flew by, feeling more like a friendly coffee catch up filled with stories, laughter and reflection than a radio interview."
+  // },
   {
-    name: "Sarah Jenkins",
-    role: "Event Partner",
-    content: "Collaborating with Hello Zindagi has been an absolute pleasure. Their dedication to fostering belonging, resilience, and cultural pride is visible in every single initiative they run. A truly inspiring platform!"
+    name: "Christina Chia",
+    role: "Non-Executive Director | Executive| Leader | Community Advocate",
+    content: "Working with Ruchi Sharma was an absolute delight. She has a natural gift for creating conversations that are warm, engaging and insightful. During my interview, she brought out the joy and authenticity in the discussion while ensuring the conversation was meaningful for the audience. Ruchi's work in multicultural media truly uplifts communities and creates a platform where diverse voices are celebrated."
   }
 ];
 

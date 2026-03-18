@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hellozindagi.com.au/sitemap.xml

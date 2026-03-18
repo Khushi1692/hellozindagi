@@ -7,6 +7,8 @@ import SEO from './SEO';
 import presidentImg from "../assets/president.png";
 import secretaryImg from "../assets/secretary.png";
 import boardMemberImg from "../assets/board_member.png";
+import vicePresidentImg from "../assets/vice_president.png";
+import treasurerImg from "../assets/treasurer.png";
 
 const About = () => {
   const focusAreas = [
@@ -47,11 +49,22 @@ const About = () => {
       ]
     },
     {
+      name: "Bina Shah",
+      role: "Vice President ",
+      image: vicePresidentImg,
+      accentColor: "#4f46e5",
+      accentBg: "#e0e7ff",
+      bio: [
+        "Ms. Bina Shah is the Chief Operating Officer of IAEC Education | IAEC Migration, bringing over 30 years of experience in international education and migration. Her ethical and dynamic approach ensures high standards in student counselling, visa services, and partner engagement, consistently fostering student success and satisfaction.",
+        "Recognised as a trusted leader and communicator, Bina has been instrumental in developing robust policies and procedures to guide students ethically, ensuring authenticity, retention, and long-term academic and career success. She has positively impacted thousands of students' lives, helping them navigate international education pathways with clarity and confidence.",
+      ]
+    },
+    {
       name: "Rahul Agrawal",
       role: "Secretary",
       image: secretaryImg,
-      accentColor: "#4f46e5",
-      accentBg: "#e0e7ff",
+      accentColor: "#059669",
+      accentBg: "#d1fae5",
       bio: [
         "Rahul Agrawal is an Information Technology consultant based in Melbourne, Australia. Having grown up in India and worked across several countries before settling in Australia, Rahul brings a global perspective shaped by diverse cultural experiences.",
         "He is actively engaged with local community groups and participates in cultural and social initiatives."
@@ -61,11 +74,22 @@ const About = () => {
       name: "Parul Chaturvedi",
       role: "Board Member",
       image: boardMemberImg,
-      accentColor: "#059669",
-      accentBg: "#d1fae5",
+      accentColor: "#4f46e5",
+      accentBg: "#e0e7ff",
       bio: [
         "Parul Chaturvedi is a software developer based in Australia. Passionate about social issues affecting immigrant communities, she believes strongly in fostering understanding and respect between cultures.",
         "Having experienced the journey of settling into a new country herself, Parul hopes to contribute to building a supportive community where individuals and families of Indian origin feel empowered as they integrate into Australian society."
+      ]
+    },
+    {
+      name: "Ashita Dhillon",
+      role: "Treasurer",
+      image: treasurerImg,
+      accentColor: "#059669",
+      accentBg: "#d1fae5",
+      bio: [
+        "Ash is an operations professional and cultural advocate dedicated to helping Indian migrants find a true sense of belonging in Australia. With a Master’s in Psychology and a career in consulting, she brings a thoughtful, people-focused approach. Deeply inspired by the legacy of her grandfather, Padmabhushan Col G.S. Dhillon of the Indian National Army, Ash carries forward a strong spirit of service. Having lived in India and Japan before calling Melbourne home, she understands the journey of moving between cultures and countries. ",
+        "With a personal love for writing, yoga, and meditation, Ash is committed to building a society where individuals from all backgrounds feel safe, included, and truly at home."
       ]
     }
   ];
