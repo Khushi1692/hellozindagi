@@ -355,7 +355,7 @@ const About = () => {
             }}>
               Leadership
             </span>
-            <h2 style={{ fontSize: '2.75rem', marginBottom: '0.75rem', letterSpacing: '-1px' }}>Founding <span className="gradient-text">Visionary</span></h2>
+            <h2 style={{ fontSize: '2.75rem', marginBottom: '0.75rem', letterSpacing: '-1px' }}>Founding <span className="gradient-text">Team</span></h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '550px', margin: '0 auto' }}>
               Meet the passionate leaders behind Hello Zindagi's mission.
             </p>
