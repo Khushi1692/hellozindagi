@@ -36,7 +36,7 @@ const Testimonials = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
-    }, 7000); // Rotate every 7 seconds
+    }, 7000); 
     return () => clearInterval(timer);
   }, []);
 
@@ -85,7 +85,7 @@ const Testimonials = () => {
           </motion.p>
         </div>
 
-        <div style={{ position: 'relative', width: '100%', maxWidth: '850px', height: '420px', margin: '0 auto' }}>
+        <div className="testimonial-container" style={{ position: 'relative', width: '100%', maxWidth: '850px', margin: '0 auto' }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -93,9 +93,9 @@ const Testimonials = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
+              className="single-testimonial-card"
               style={{
                 background: 'var(--bg-card)',
-                padding: '3rem 2.5rem',
                 borderRadius: 'var(--radius-xl)',
                 border: '1px solid var(--border)',
                 position: 'relative',
@@ -106,10 +106,9 @@ const Testimonials = () => {
                 height: '100%',
                 justifyContent: 'center'
               }}
-              className="single-testimonial-card"
             >
               <Quote 
-                size={80} 
+                className="testimonial-quote-icon"
                 color="var(--primary)" 
                 style={{ 
                   opacity: 0.05, 
@@ -122,7 +121,7 @@ const Testimonials = () => {
               
               <p style={{ 
                 color: 'var(--text-body)', 
-                fontSize: 'clamp(1.1rem, 2.5vw, 1.3rem)', 
+                fontSize: 'clamp(1.05rem, 2.5vw, 1.3rem)', 
                 lineHeight: 1.6, 
                 marginBottom: '2rem', 
                 fontStyle: 'italic',
@@ -189,6 +188,39 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
+
+      <style>{`
+        .testimonial-container {
+          height: 420px;
+        }
+        .single-testimonial-card {
+          padding: 3rem 4rem;
+        }
+        .testimonial-quote-icon {
+          width: 80px;
+          height: 80px;
+        }
+        @media (max-width: 768px) {
+          .testimonial-container {
+            height: auto;
+            min-height: 480px;
+          }
+          .single-testimonial-card {
+            padding: 2.5rem 1.5rem !important;
+          }
+          .testimonial-quote-icon {
+            width: 40px;
+            height: 40px;
+            top: 1rem !important;
+            left: 1rem !important;
+          }
+          .single-testimonial-card p {
+            font-size: 1rem !important;
+            line-height: 1.5 !important;
+            margin-bottom: 1.5rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
