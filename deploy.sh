@@ -11,7 +11,7 @@ echo "Adding files to git..."
 git add . || exit 1
 
 echo "Committing..."
-git commit -m "chnages in testimonail for mobile view" || exit 1
+git commit -m "chnages in images of team" || exit 1
 
 echo "Pushing to repo..."
 git push || exit 1
