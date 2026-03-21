@@ -27,6 +27,11 @@ const testimonials = [
     name: "Christina Chia",
     role: "Non-Executive Director | Executive| Leader | Community Advocate",
     content: "Working with Ruchi Sharma was an absolute delight. She has a natural gift for creating conversations that are warm, engaging and insightful. During my interview, she brought out the joy and authenticity in the discussion while ensuring the conversation was meaningful for the audience. Ruchi's work in multicultural media truly uplifts communities and creates a platform where diverse voices are celebrated."
+  },
+  {
+    name: "Jaya Manchikanti",
+    role: "President , IndianCare",
+    content: "I always look forward to listening to the Hello Zindagi radio program every week. It has an upbeat tempo, full of positivity, laughter and sensitive well-being messages. My spirits are lifted to a higher level after listening to this program."
   }
 ];
 
