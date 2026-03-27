@@ -104,7 +104,7 @@ const Hero = () => {
            initial={{ opacity: 0, scale: 0.9 }}
            animate={{ opacity: 1, scale: 1 }}
            transition={{ duration: 0.8, delay: 0.25 }}
-           style={{ position: 'relative', gridArea: 'image' }}
+           style={{ position: 'relative', gridArea: 'image', marginTop: '2.5rem' }}
            className="hero-image-container"
         >
           <div style={{

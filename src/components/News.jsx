@@ -4,9 +4,20 @@ import { ArrowUpRight, Calendar, User, MapPin, Play, Pause } from 'lucide-react'
 import holi from "../assets/holi.webp";
 import diwali from "../assets/diwali.webp";
 import youth_dance from "../assets/youth_dance.webp";
+import multicultural from "../assets/multicultural.png";
 import womensDayVideo from "../assets/womensDayVideo.mp4";
 
 const newsItems = [
+  { 
+    id: 5, 
+    date: 'March 28, 2026', 
+    title: 'Culture Connects Us All', 
+    excerpt: 'Join us at 46-78 Argyle Way, Wantirna South for a vibrant day of culture, connection, food, music, and dance as we celebrate Multicultural Week. A festive atmosphere for the whole community. Free event.',
+    category: 'Upcoming Event',
+    img: multicultural,
+    author: 'Hello Zindagi',
+    time: '4:00 to 7:00 PM'
+  },
   { 
     id: 1, 
     date: 'March 08, 2026', 
@@ -83,6 +94,7 @@ const MediaRenderer = ({ videoSrc, imgSrc }) => {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
+            objectPosition: 'center',
             transition: 'transform 0.5s ease'
           }}
         >
@@ -166,7 +178,8 @@ const News = () => {
               }}
             >
               <div className="news-image-wrapper" style={{
-                height: '240px',
+                aspectRatio: '16/9',
+                height: 'auto',
                 position: 'relative',
                 overflow: 'hidden'
               }}>
@@ -201,7 +214,7 @@ const News = () => {
               <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <div className="card-meta" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--primary)', fontSize: '0.85rem', fontWeight: 600 }}>
-                    <Calendar size={14} /> {news.date}
+                    <Calendar size={14} /> {news.date} {news.time && `| ${news.time}`}
                   </div>
                   <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'var(--text-muted)' }} />
                   <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 500 }}>
@@ -218,18 +231,18 @@ const News = () => {
                 </p>
                 
                 {/* Footer of Card */}
-                <div className="card-footer" style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'space-between',
-                  gap: '1rem',
-                  borderTop: '1px solid var(--border-light)',
-                  paddingTop: '1.25rem',
-                  marginTop: 'auto'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                    <User size={16} /> {news.author}
-                  </div>
+                  <div style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'space-between',
+                    gap: '1rem',
+                    borderTop: '1px solid var(--border-light)',
+                    paddingTop: '1.25rem',
+                    marginTop: 'auto'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                      <User size={16} /> {news.author}
+                    </div>
                   
                   {news.link ? (
                     <a href={news.link} target="_blank" rel="noopener noreferrer" className="read-more-btn" style={{ 
@@ -256,7 +269,7 @@ const News = () => {
       <style>{`
         .news-card {
           width: 100%;
-          max-width: 500px;
+          max-width: 650px;
         }
         .news-card:hover {
           transform: translateY(-6px);
