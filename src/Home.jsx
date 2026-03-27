@@ -5,16 +5,18 @@ import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import SEO from './components/SEO';
 
+
+
 const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
       "name": "Hello Zindagi",
-      "url": "https://hellozindagi.com.au/",
+      "url": "https://hellozindagi.org.au/",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://hellozindagi.com.au/news?q={search_term_string}",
+        "target": "https://hellozindagi.org.au/news?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
@@ -26,25 +28,25 @@ const homeSchema = {
           "@type": "SiteNavigationElement",
           "position": 1,
           "name": "Home",
-          "url": "https://hellozindagi.com.au/"
+          "url": "https://hellozindagi.org.au/"
         },
         {
           "@type": "SiteNavigationElement",
           "position": 2,
           "name": "News & Events",
-          "url": "https://hellozindagi.com.au/news"
+          "url": "https://hellozindagi.org.au/news"
         },
         {
           "@type": "SiteNavigationElement",
           "position": 3,
           "name": "About Us",
-          "url": "https://hellozindagi.com.au/about"
+          "url": "https://hellozindagi.org.au/about"
         },
         {
           "@type": "SiteNavigationElement",
           "position": 4,
           "name": "Contact Us",
-          "url": "https://hellozindagi.com.au/contact"
+          "url": "https://hellozindagi.org.au/contact"
         }
       ]
     }
@@ -54,9 +56,12 @@ const homeSchema = {
 const Home = () => (
   <>
     <SEO 
-      title="Home | Hello Zindagi" 
-      description="Hello Zindagi Inc is dedicated to supporting individuals and families of Indian origin in their journey of assimilation into Australian society." 
-      url="https://hellozindagi.com.au/" 
+      title="Hello Zindagi | Indian-Australian Community in Australia" 
+      description="Hello Zindagi connects Indian and Australian communities through culture, shared values, and support. Find events, news, and resources for Indians in Australia." 
+      url="https://hellozindagi.org.au/" 
+      ogTitle="Hello Zindagi | Indian-Australian Community"
+      ogDescription="Connecting Indian and Australian communities through culture, dialogue, and shared experiences."
+      ogImage="https://hellozindagi.org.au/og-image.jpg"
       keywords="Hello Zindagi, Australian Indian, Radio, Integration" 
       schemaMarkup={homeSchema}
     />

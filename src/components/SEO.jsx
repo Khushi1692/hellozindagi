@@ -1,7 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const SEO = ({ title, description, url, keywords, schemaMarkup }) => {
+const SEO = ({ title, description, url, keywords, schemaMarkup, ogTitle, ogDescription, ogImage }) => {
+  const finalOgTitle = ogTitle || title;
+  const finalOgDescription = ogDescription || description;
+  const finalOgImage = ogImage || "https://hellozindagi.org.au/og-image.jpg";
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -21,16 +25,16 @@ const SEO = ({ title, description, url, keywords, schemaMarkup }) => {
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content="https://hellozindagi.com.au/logo.png" />
+      <meta property="og:title" content={finalOgTitle} />
+      <meta property="og:description" content={finalOgDescription} />
+      <meta property="og:image" content={finalOgImage} />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={url} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content="https://hellozindagi.com.au/logo.png" />
+      <meta property="twitter:title" content={finalOgTitle} />
+      <meta property="twitter:description" content={finalOgDescription} />
+      <meta property="twitter:image" content={finalOgImage} />
     </Helmet>
   );
 };

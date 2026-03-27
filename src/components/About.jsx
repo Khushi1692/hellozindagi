@@ -103,7 +103,7 @@ const About = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Us | Hello Zindagi",
-    "url": "https://hellozindagi.com.au/about",
+    "url": "https://hellozindagi.org.au/about",
     "description": "Learn more about Hello Zindagi and our mission to support the Indian community in Australia."
   };
 
@@ -112,7 +112,7 @@ const About = () => {
       <SEO 
         title="About Us | Hello Zindagi" 
         description="Learn more about Hello Zindagi Inc, our vision, mission, and how we deliver community impact." 
-        url="https://hellozindagi.com.au/about" 
+        url="https://hellozindagi.org.au/about" 
         keywords="About Us, Vision, Mission, Radio, Integration" 
         schemaMarkup={aboutSchema}
       />

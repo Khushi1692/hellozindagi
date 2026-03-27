@@ -51,7 +51,7 @@ const Contact = () => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Us | Hello Zindagi",
-    "url": "https://hellozindagi.com.au/contact",
+    "url": "https://hellozindagi.org.au/contact",
     "description": "Get in touch with Hello Zindagi for inquiries, support, or collaborations."
   };
 
@@ -60,7 +60,7 @@ const Contact = () => {
       <SEO 
         title="Contact Us | Hello Zindagi" 
         description="Get in touch with Hello Zindagi. We'd love to hear from you. Send us a message or visit our studio." 
-        url="https://hellozindagi.com.au/contact" 
+        url="https://hellozindagi.org.au/contact" 
         keywords="Contact, Hello Zindagi, Address, Email, Telephone" 
         schemaMarkup={contactSchema}
       />
