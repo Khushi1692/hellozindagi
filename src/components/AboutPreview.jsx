@@ -80,6 +80,7 @@ const AboutPreview = () => {
           >
              <img 
                src={communityImage}
+               loading="lazy"
                alt="Community Diversity" 
                onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=800" }}
                style={{

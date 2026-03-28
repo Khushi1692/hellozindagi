@@ -99,33 +99,63 @@ const About = () => {
     }
   ];
 
-  const aboutSchema = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About Us | Hello Zindagi",
-    "url": "https://hellozindagi.org.au/about",
-    "description": "Learn more about Hello Zindagi and our mission to support the Indian community in Australia."
-  };
+ // Replace the existing aboutSchema with this
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "name": "About Hello Zindagi – Indian Australian Community Organisation",
+      "url": "https://hellozindagi.org.au/about",
+      "description": "Hello Zindagi Inc supports Indian families in Australia through culture, community events, and cross-cultural integration."
+    },
+    {
+      "@type": "Organization",
+      "name": "Hello Zindagi Inc",
+      "url": "https://hellozindagi.org.au",
+      "logo": "https://hellozindagi.org.au/favicon.ico",
+      "description": "Hello Zindagi connects Indian and Australian communities through shared values of humanity, happiness, and hope.",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Melbourne, Australia"
+      },
+      "member": leaders.map(leader => ({
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": leader.name,
+          "jobTitle": leader.role.trim()
+        },
+        "roleName": leader.role.trim()
+      }))
+    }
+  ]
+};
+
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)', background: 'var(--bg-main)' }}>
       <SEO 
-        title="About Us | Hello Zindagi" 
-        description="Learn more about Hello Zindagi Inc, our vision, mission, and how we deliver community impact." 
-        url="https://hellozindagi.org.au/about" 
-        keywords="About Us, Vision, Mission, Radio, Integration" 
-        schemaMarkup={aboutSchema}
-      />
+  title="About Us | Hello Zindagi – Indian Australian Community"
+  description="Learn about Hello Zindagi Inc — our vision to unite Indian and Australian communities through culture, events, and shared values of humanity, happiness and hope."
+  url="https://hellozindagi.org.au/about"
+  keywords="Hello Zindagi about, Indian community Australia, multicultural organisation Melbourne, Indo-Australian community, Vision, Mission, Radio, Integration"
+  schemaMarkup={aboutSchema}
+/>
 
       {/* Hero Section */}
-      <section style={{ 
-        minHeight: '60vh',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '4rem 0 3rem 0',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
+      <section 
+        aria-label="About Hello Zindagi"
+        style={{ 
+          minHeight: '60vh',
+          display: 'flex',
+          alignItems: 'center',
+          padding: '4rem 0 3rem 0',
+          position: 'relative',
+          overflow: 'hidden'
+        }}
+      >
+        
         <div style={{
           position: 'absolute',
           top: '-20%',
@@ -202,7 +232,9 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section style={{ padding: '7rem 0', background: 'var(--bg-section)' }}>
+      <section 
+       aria-label="Our mission"
+      style={{ padding: '7rem 0', background: 'var(--bg-section)' }}>
          <div className="container">
            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '5rem', alignItems: 'start' }} className="mission-grid">
               
@@ -265,7 +297,9 @@ const About = () => {
       </section>
 
       {/* Focus Areas Section */}
-      <section style={{ padding: '7rem 0' }}>
+      <section 
+      aria-label="Impact verticals"
+      style={{ padding: '7rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: '2.75rem', marginBottom: '0.75rem', letterSpacing: '-1px' }}>Impact <span className="gradient-text">Verticals</span></h2>
@@ -319,7 +353,9 @@ const About = () => {
       </section>
 
       {/* Founding Visionary Section */}
-      <section style={{ padding: '7rem 0', background: 'var(--bg-section)', position: 'relative', overflow: 'hidden' }}>
+      <section 
+       aria-label="Founding team"
+      style={{ padding: '7rem 0', background: 'var(--bg-section)', position: 'relative', overflow: 'hidden' }}>
         {/* Decorative background elements */}
         <div style={{
           position: 'absolute',
@@ -422,7 +458,7 @@ const About = () => {
                     }} />
                     <img 
                       src={leader.image} 
-                      alt={leader.name} 
+                      alt={`${leader.name} – ${leader.role.trim()}, Hello Zindagi Inc`} 
                       loading="lazy"
                       style={{ 
                         width: '200px', 
@@ -506,7 +542,9 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section style={{ padding: '4rem 0 6rem 0' }}>
+      <section 
+       aria-label="Join Hello Zindagi"
+      style={{ padding: '4rem 0 6rem 0' }}>
         <div className="container">
           <div className="about-cta-box" style={{ 
             background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))', 

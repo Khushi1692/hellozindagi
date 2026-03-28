@@ -118,13 +118,25 @@ const Hero = () => {
             <div style={{
               width: '100%',
               height: '480px',
-              background: `url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1000') center/cover`,
+              position: 'relative',
+              overflow: 'hidden',
               display: 'flex',
               alignItems: 'flex-end',
-              padding: '2rem',
-              position: 'relative',
-              overflow: 'hidden'
+              padding: '2rem'
             }}>
+               <img 
+                 src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1000"
+                 alt="Diverse community hands together"
+                 loading="eager"
+                 fetchpriority="high"
+                 style={{
+                   position: 'absolute',
+                   inset: 0,
+                   width: '100%',
+                   height: '100%',
+                   objectFit: 'cover'
+                 }}
+               />
                <div style={{
                  position: 'absolute',
                  inset: 0,

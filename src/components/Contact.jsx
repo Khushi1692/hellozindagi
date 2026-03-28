@@ -48,24 +48,52 @@ const Contact = () => {
   };
 
   const contactSchema = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact Us | Hello Zindagi",
-    "url": "https://hellozindagi.org.au/contact",
-    "description": "Get in touch with Hello Zindagi for inquiries, support, or collaborations."
-  };
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "name": "Contact Hello Zindagi – Indian Australian Community",
+      "url": "https://hellozindagi.org.au/contact",
+      "description": "Get in touch with Hello Zindagi for inquiries, support, or collaborations."
+    },
+    {
+      "@type": "Organization",
+      "name": "Hello Zindagi Inc",
+      "url": "https://hellozindagi.org.au",
+      "logo": "https://hellozindagi.org.au/favicon.ico",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+61-468-793-340",
+        "contactType": "customer support",
+        "availableLanguage": ["English", "Hindi"],
+        "areaServed": "AU"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1/191 Scoresby Road",
+        "addressLocality": "Boronia",
+        "addressRegion": "VIC",
+        "postalCode": "3155",
+        "addressCountry": "AU"
+      },
+      "email": "hellozindagiau@gmail.com",
+      "telephone": "+61-468-793-340"
+    }
+  ]
+};
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
-        title="Contact Us | Hello Zindagi" 
-        description="Get in touch with Hello Zindagi. We'd love to hear from you. Send us a message or visit our studio." 
-        url="https://hellozindagi.org.au/contact" 
-        keywords="Contact, Hello Zindagi, Address, Email, Telephone" 
-        schemaMarkup={contactSchema}
-      />
+      <SEO
+  title="Contact Us | Hello Zindagi – Indian Australian Community"
+  description="Contact Hello Zindagi Inc in Boronia, Melbourne. Reach out for community events, support, partnerships or general enquiries. Call 04687 93340 or email us."
+  url="https://hellozindagi.org.au/contact"
+  keywords="contact Hello Zindagi, Indian community Melbourne, Boronia community centre, Hello Zindagi email phone address"
+  schemaMarkup={contactSchema}
+/>
       
-      <section style={{ padding: '6rem 0' }}>
+      <section 
+      aria-label="Contact Hello Zindagi"style={{ padding: '6rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <h1 style={{ fontSize: '3rem', marginBottom: '0.75rem', letterSpacing: '-1px' }}>Get in <span className="gradient-text">Touch</span></h1>
@@ -106,11 +134,23 @@ const Contact = () => {
                       flexShrink: 0,
                       color: 'var(--primary)' 
                     }}>
-                      <item.icon size={18} />
+                      <item.icon size={18}  aria-hidden="true" />
                     </div>
                     <div>
                       <h4 style={{ marginBottom: '0.25rem', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main)' }}>{item.label}</h4>
-                      <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{item.value}</p>
+                      <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                        {item.label === 'Call Us' ? (
+                          <a href="tel:+61468793340" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
+                            {item.value}
+                          </a>
+                        ) : item.label === 'Email' ? (
+                          <a href="mailto:hellozindagiau@gmail.com" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
+                            {item.value}
+                          </a>
+                        ) : (
+                          item.value
+                        )}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -174,15 +214,23 @@ const Contact = () => {
                 }}>
                 <div className="contact-form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
                   <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)' }}>Full Name</label>
-                    <input name="user_name" type="text" placeholder="John Doe" style={inputStyle} 
+                    <label 
+                      htmlFor="user_name"
+                      style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)' }}>Full Name</label>
+                    <input 
+                      id="user_name"
+                      name="user_name" type="text" placeholder="John Doe" required aria-required="true" style={inputStyle} 
                       onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
                       onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                     />
                   </div>
                   <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)' }}>Email Address</label>
-                    <input name="user_email" type="email" placeholder="john@example.com" style={inputStyle}
+                    <label 
+                      htmlFor="user_email"
+                      style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)' }}>Email Address</label>
+                    <input 
+                      id="user_email"
+                      name="user_email" type="email" placeholder="john@example.com" required aria-required="true" style={inputStyle}
                       onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
                       onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                     />
@@ -190,16 +238,24 @@ const Contact = () => {
                 </div>
 
                 <div style={{ marginBottom: '1.25rem' }}>
-                  <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)' }}>Subject</label>
-                  <input name="subject" type="text" placeholder="General Inquiry" style={inputStyle}
+                  <label 
+                    htmlFor="subject"
+                    style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)' }}>Subject</label>
+                  <input 
+                    id="subject"
+                    name="subject" type="text" placeholder="General Inquiry" required aria-required="true" style={inputStyle}
                     onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
                     onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                   />
                 </div>
 
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)' }}>Message</label>
-                  <textarea name="message" rows="5" placeholder="Your message here..." style={{ ...inputStyle, resize: 'none' }}
+                  <label 
+                    htmlFor="message"
+                    style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)' }}>Message</label>
+                  <textarea 
+                    id="message"
+                    name="message" rows="5" placeholder="Your message here..." required aria-required="true" style={{ ...inputStyle, resize: 'none' }}
                     onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
                     onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                   ></textarea>

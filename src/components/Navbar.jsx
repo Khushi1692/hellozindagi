@@ -45,6 +45,8 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Hello Zindagi Logo"
+              loading="eager"
+              fetchpriority="high"
               style={{ height: '48px', objectFit: 'contain' }}
             />
             <div style={{ display: 'flex', flexDirection: 'column' }}>

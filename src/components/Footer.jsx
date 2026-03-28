@@ -21,6 +21,7 @@ const Footer = () => {
               <img
                 src={logo} 
                 alt="Hello Zindagi Logo"
+                loading="lazy"
                 style={{ height: '36px' }}
               />
               <span style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-main)' }}>
@@ -106,16 +107,16 @@ const Footer = () => {
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                 <Phone size={16} color="var(--primary)" style={{ marginTop: '2px', flexShrink: 0 }} />
-                <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                <a href="tel:+61468793340" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
                    04687 93340
-                </span>
+                </a>
               </li>
 
               <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                 <Mail size={16} color="var(--primary)" style={{ marginTop: '2px', flexShrink: 0 }} />
-                <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                <a href="mailto:hellozindagiau@gmail.com" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
                   hellozindagiau@gmail.com
-                </span>
+                </a>
               </li>
 
               <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
