@@ -5,7 +5,7 @@ import { ArrowUpRight, Calendar, User, Play, Pause } from 'lucide-react';
 import holi from "../assets/holi.webp";
 import diwali from "../assets/diwali.webp";
 import youth_dance from "../assets/youth_dance.webp";
-import multicultural from "../assets/multicultural.webp";
+import multicultural from "../assets/multicultural.png";
 import womensDayVideo from "../assets/womensDayVideo.mp4";
 
 const newsItems = [
@@ -14,12 +14,12 @@ const newsItems = [
     date: 'March 28, 2026',
     isoDate: '2026-03-28',
     title: 'Culture Connects Us All', 
-    excerpt: 'Join us at 46-78 Argyle Way, Wantirna South for a vibrant day of culture, connection, food, music, and dance as we celebrate Multicultural Week. A festive atmosphere for the whole community. Free event.',
-    category: 'Upcoming Event',
+    excerpt: 'Culture Connects Us All was a vibrant event by Hello Zindagi celebrating Indian, Chinese, and Greek cultures during Cultural Diversity Week 2026. With dignitaries present, the evening featured yoga, Tai Chi, Bollywood dance, and cultural performances. Guests enjoyed a fusion of traditions, food, and festive moments together. The event beautifully highlighted unity, inclusivity, and community connection.',
+    category: 'Culture & Arts',
     img: multicultural,
     imgAlt: 'Hello Zindagi Multicultural Week celebration event at Wantirna South',
     author: 'Hello Zindagi',
-    time: '4:00 to 7:00 PM'
+    
   },
   { 
     id: 1, 

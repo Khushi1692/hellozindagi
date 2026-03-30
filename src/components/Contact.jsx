@@ -76,7 +76,7 @@ const Contact = () => {
         "postalCode": "3155",
         "addressCountry": "AU"
       },
-      "email": "hellozindagiau@gmail.com",
+      "email": ["info@hellozindagi.org.au", "secretary@hellozindagi.org.au"],
       "telephone": "+61-468-793-340"
     }
   ]
@@ -120,7 +120,7 @@ const Contact = () => {
                 {[
                   { icon: MapPin, label: 'Address', value: '1/191 Scoresby Road, Boronia, Victoria 3155' },
                   { icon: Phone, label: 'Call Us', value: '04687 93340' },
-                  { icon: Mail, label: 'Email', value: 'hellozindagiau@gmail.com' }
+                  { icon: Mail, label: 'Email', value: ['info@hellozindagi.org.au', 'secretary@hellozindagi.org.au'] }
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: i < 2 ? '1.75rem' : 0 }}>
                     <div style={{ 
@@ -138,19 +138,23 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 style={{ marginBottom: '0.25rem', fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main)' }}>{item.label}</h4>
-                      <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                      <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
                         {item.label === 'Call Us' ? (
                           <a href="tel:+61468793340" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
                             {item.value}
                           </a>
                         ) : item.label === 'Email' ? (
-                          <a href="mailto:hellozindagiau@gmail.com" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-                            {item.value}
-                          </a>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                            {item.value.map(email => (
+                              <a key={email} href={`mailto:${email}`} style={{ color: 'var(--text-muted)', textDecoration: 'none', display: 'block' }}>
+                                {email}
+                              </a>
+                            ))}
+                          </div>
                         ) : (
                           item.value
                         )}
-                      </p>
+                      </div>
                     </div>
                   </div>
                 ))}
