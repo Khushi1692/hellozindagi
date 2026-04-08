@@ -562,7 +562,7 @@ const aboutSchema = {
               <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: '550px', margin: '0 auto 2.5rem auto', fontSize: '1.1rem', fontWeight: 400, lineHeight: 1.7 }}>
                 Join Hello Zindagi today and contribute to a vibrant, connected, and respectful community.
               </p>
-              <Link to="/contact" style={{
+              <a href="https://forms.gle/aoPAv5nj8N2L6rHr9" target="_blank" rel="noopener noreferrer" style={{
                 padding: '1rem 2.5rem', 
                 borderRadius: 'var(--radius-sm)', 
                 fontSize: '1rem', 
@@ -579,8 +579,8 @@ const aboutSchema = {
               }}
               className="cta-btn"
               >
-                Join Our Platform <ArrowRight size={18} />
-              </Link>
+                BECOME THE MEMBER <ArrowRight size={18} />
+              </a>
             </div>
           </div>
         </div>

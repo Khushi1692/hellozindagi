@@ -90,11 +90,17 @@ const Footer = () => {
           <div>
             <h5 style={{ marginBottom: '1.5rem', fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)' }}>Support</h5>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-              {['Become a Volunteer', 'Membership', 'Advertising', 'Donate'].map((l) => (
+              {['Become a Volunteer', 'Become a member', 'Advertising', 'Donate'].map((l) => (
                 <li key={l}>
-                  <Link to="/contact" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                    {l}
-                  </Link>
+                  {l === 'Become a member' ? (
+                    <a href="https://forms.gle/aoPAv5nj8N2L6rHr9" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', fontSize: '0.9rem', textDecoration: 'none' }}>
+                      {l}
+                    </a>
+                  ) : (
+                    <Link to="/contact" style={{ color: 'var(--text-muted)', fontSize: '0.9rem', textDecoration: 'none' }}>
+                      {l}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -114,8 +120,8 @@ const Footer = () => {
 
               <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                 <Mail size={16} color="var(--primary)" style={{ marginTop: '2px', flexShrink: 0 }} />
-                <a href="mailto:hellozindagiau@gmail.com" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
-                  hellozindagiau@gmail.com
+                <a href="mailto:secretary@hellozindagi.org.au" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
+                  secretary@hellozindagi.org.au
                 </a>
               </li>
 

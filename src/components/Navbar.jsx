@@ -108,13 +108,13 @@ const Navbar = () => {
         {/* Right Side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <a
-            href="https://www.facebook.com/groups/1792626044901308"
+            href="https://forms.gle/aoPAv5nj8N2L6rHr9"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary support-btn"
             style={{ padding: '0.55rem 1.2rem', fontSize: '0.85rem', textDecoration: 'none', display: 'inline-flex' }}
           >
-            Support Us
+            Become a member
           </a>
 
           <div
@@ -168,7 +168,7 @@ const Navbar = () => {
             </Link>
           ))}
           <a
-            href="https://www.facebook.com/groups/1792626044901308"
+            href="https://forms.gle/aoPAv5nj8N2L6rHr9"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
@@ -179,7 +179,7 @@ const Navbar = () => {
               textDecoration: 'none'
             }}
           >
-            Support Us
+            Become a member
           </a>
         </motion.div>
       )}
