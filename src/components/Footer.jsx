@@ -120,8 +120,8 @@ const Footer = () => {
 
               <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                 <Mail size={16} color="var(--primary)" style={{ marginTop: '2px', flexShrink: 0 }} />
-                <a href="mailto:secretary@hellozindagi.org.au" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
-                  secretary@hellozindagi.org.au
+                <a href="mailto:hellozindagiau@gmail.com" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
+                  hellozindagiau@gmail.com
                 </a>
               </li>
 
