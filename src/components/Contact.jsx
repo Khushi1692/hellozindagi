@@ -76,7 +76,7 @@ const Contact = () => {
         "postalCode": "3155",
         "addressCountry": "AU"
       },
-      "email": ["secretary@hellozindagi.org.au"],
+      "email": ["hellozindagiau@gmail.com"],
       "telephone": "+61-468-793-340"
     }
   ]
@@ -120,7 +120,7 @@ const Contact = () => {
                 {[
                   { icon: MapPin, label: 'Address', value: '1/191 Scoresby Road, Boronia, Victoria 3155' },
                   { icon: Phone, label: 'Call Us', value: '04687 93340' },
-                  { icon: Mail, label: 'Email', value: ['secretary@hellozindagi.org.au'] } 
+                  { icon: Mail, label: 'Email', value: ['hellozindagiau@gmail.com'] } 
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: i < 2 ? '1.75rem' : 0 }}>
                     <div style={{ 
