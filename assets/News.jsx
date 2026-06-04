@@ -171,7 +171,7 @@ const MediaRenderer = ({ videoSrc, imgSrc, imgAlt, loading = 'lazy', fetchpriori
     <img 
       src={imgSrc}
       loading={loading}
-      fetchPriority={fetchpriority}
+      fetchpriority={fetchpriority}
       alt={imgAlt}   // ✅ descriptive alt text (was generic "Card graphic" before)
       width="640"
       height="360"   // ✅ explicit dimensions reduce layout shift (improves Core Web Vitals)
