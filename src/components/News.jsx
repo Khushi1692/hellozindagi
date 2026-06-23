@@ -8,20 +8,8 @@ import diwali from "../assets/diwali.webp";
 import youth_dance from "../assets/youth_dance.webp";
 import multicultural from "../assets/multicultural.png";
 import womensDayVideo from "../assets/womensDayVideo.mp4";
-import yogaDay from "../assets/yogaDay.jpeg";
 
 const newsItems = [
-  {
-  id: 6,
-  date: 'June 21, 2026',
-  isoDate: '2026-06-21',
-  title: 'International Yoga Day 2026',
-  excerpt: 'Hello Zindagi proudly celebrated International Yoga Day 2026 with a special session focused on Healthy Ageing. Participants of all ages came together to experience gentle asanas, pranayama, guided relaxation, and meditation. The event promoted physical wellbeing, mental calmness, and community connection, inspiring everyone to embrace a healthier and more mindful lifestyle.',
-  category: 'Health & Wellness',
-  img: yogaDay,
-  imgAlt: 'International Yoga Day 2026 celebration at Knox Library, Wantirna South',
-  author: 'Hello Zindagi',
-},
   { 
     id: 6, 
     date: 'June 21, 2026',
