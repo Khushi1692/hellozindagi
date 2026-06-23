@@ -10,6 +10,8 @@ const Home = lazy(() => import('./Home'));
 const NewsEvents = lazy(() => import('./NewsEvents'));
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
+const ChildSafetyPolicy = lazy(() => import('./components/ChildSafetyPolicy'));
+const AntiRacismPolicy = lazy(() => import('./components/AntiRacismPolicy'));
 
 // Temporary Loading Component
 const PageLoading = () => (
@@ -58,6 +60,8 @@ function App() {
                 <Route path="/news" element={<NewsEvents />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/child-safety" element={<ChildSafetyPolicy />} />
+                <Route path="/anti-racism" element={<AntiRacismPolicy />} />
               </Routes>
             </Suspense>
           </main>

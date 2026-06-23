@@ -153,13 +153,13 @@ const Footer = () => {
             © {new Date().getFullYear()} Hello Zindagi Inc. All rights reserved.
           </p>
 
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <a href="#" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Privacy Policy
-            </a>
-            <a href="#" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Terms of Service
-            </a>
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+            <Link to="/child-safety" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
+              Child Safety Policy
+            </Link>
+            <Link to="/anti-racism" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
+              Anti-Racism Policy
+            </Link>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { ArrowUpRight, Calendar, User, Play, Pause } from 'lucide-react';
 import holi from "../assets/holi.webp";
+import yogaday from "../assets/yogaday.jpeg";
 import diwali from "../assets/diwali.webp";
 import youth_dance from "../assets/youth_dance.webp";
 import multicultural from "../assets/multicultural.png";
@@ -21,6 +22,19 @@ const newsItems = [
   imgAlt: 'International Yoga Day 2026 celebration at Knox Library, Wantirna South',
   author: 'Hello Zindagi',
 },
+  { 
+    id: 6, 
+    date: 'June 21, 2026',
+    isoDate: '2026-06-21',
+    title: '12th International Day of Yoga (2026) – A Wonderful Community Celebration', 
+    excerpt: 'On 21 June 2026, Hello Zindagi AU gathered the community at Knox Library to celebrate under the theme "Yoga for Healthy Ageing". The event opened with a Welcome by the President, Acknowledgement of Country, children reciting Sanskrit verses, and a message from the Mayor of Knox. Participants enjoyed a rejuvenating session of gentle asanas, pranayama, and meditation. Special thanks to Knox City Council, Your Library, YogaChamps, and AYUSH Information Cell Australia for supporting community wellness and connection.',
+    category: 'Health & Wellness',
+    img: yogaday,
+    imgAlt: 'International Day of Yoga 2026 celebration event at Knox Library focusing on healthy ageing',
+    imgPosition: 'center 70%',
+    author: 'Hello Zindagi',
+    link: 'mailto:hellozindagiau@gmail.com'
+  },
   { 
     id: 5, 
     date: 'March 28, 2026',
@@ -111,7 +125,7 @@ const structuredData = {
   }))
 };
 
-const MediaRenderer = ({ videoSrc, imgSrc, imgAlt, loading = 'lazy', fetchpriority }) => {
+const MediaRenderer = ({ videoSrc, imgSrc, imgAlt, loading = 'lazy', fetchpriority, imgPosition = 'center' }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -180,6 +194,7 @@ const MediaRenderer = ({ videoSrc, imgSrc, imgAlt, loading = 'lazy', fetchpriori
         position: 'absolute', inset: 0,
         width: '100%', height: '100%',
         objectFit: 'cover',
+        objectPosition: imgPosition,
         transition: 'transform 0.5s ease'
       }} 
     />
@@ -271,6 +286,7 @@ const News = () => {
                     videoSrc={news.video}
                     imgSrc={news.img}
                     imgAlt={news.imgAlt}   // ✅ passing descriptive alt text
+                    imgPosition={news.imgPosition}
                     loading={index === 0 ? 'eager' : 'lazy'}
                     fetchpriority={index === 0 ? 'high' : undefined}
                   />
