@@ -105,7 +105,7 @@ const aboutSchema = {
   "@graph": [
     {
       "@type": "AboutPage",
-      "name": "About Hello Zindagi – Indian Australian Community Organisation",
+      "name": "About Hello Zindagi – Australian Indian Community Organisation",
       "url": "https://hellozindagi.org.au/about",
       "description": "Hello Zindagi Inc supports Indian families in Australia through culture, community events, and cross-cultural integration."
     },
@@ -136,7 +136,7 @@ const aboutSchema = {
   return (
     <div style={{ paddingTop: 'var(--nav-height)', background: 'var(--bg-main)' }}>
       <SEO 
-  title="About Us | Hello Zindagi – Indian Australian Community"
+  title="About Us | Hello Zindagi – Australian Indian Community"
   description="Learn about Hello Zindagi Inc — our vision to unite Indian and Australian communities through culture, events, and shared values of humanity, happiness and hope."
   url="https://hellozindagi.org.au/about"
   keywords="Hello Zindagi about, Indian community Australia, multicultural organisation Melbourne, Indo-Australian community, Vision, Mission, Radio, Integration"

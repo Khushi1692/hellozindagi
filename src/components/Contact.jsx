@@ -52,7 +52,7 @@ const Contact = () => {
   "@graph": [
     {
       "@type": "ContactPage",
-      "name": "Contact Hello Zindagi – Indian Australian Community",
+      "name": "Contact Hello Zindagi – Australian Indian Community",
       "url": "https://hellozindagi.org.au/contact",
       "description": "Get in touch with Hello Zindagi for inquiries, support, or collaborations."
     },
@@ -85,7 +85,7 @@ const Contact = () => {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       <SEO
-  title="Contact Us | Hello Zindagi – Indian Australian Community"
+  title="Contact Us | Hello Zindagi – Australian Indian Community"
   description="Contact Hello Zindagi Inc in Boronia, Melbourne. Reach out for community events, support, partnerships or general enquiries. Call 04687 93340 or email us."
   url="https://hellozindagi.org.au/contact"
   keywords="contact Hello Zindagi, Indian community Melbourne, Boronia community centre, Hello Zindagi email phone address"

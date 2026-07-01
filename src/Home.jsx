@@ -56,10 +56,10 @@ const homeSchema = {
 const Home = () => (
   <>
     <SEO 
-      title="Hello Zindagi | Indian-Australian Community in Australia" 
+      title="Hello Zindagi | Australian Indian Community in Australia" 
       description="Hello Zindagi connects Indian and Australian communities through culture, shared values, and support. Find events, news, and resources for Indians in Australia." 
       url="https://hellozindagi.org.au/" 
-      ogTitle="Hello Zindagi | Indian-Australian Community"
+      ogTitle="Hello Zindagi | Australian Indian Community"
       ogDescription="Connecting Indian and Australian communities through culture, dialogue, and shared experiences."
       ogImage="https://hellozindagi.org.au/og-image.jpg"
       keywords="Hello Zindagi, Australian Indian, Radio, Integration" 

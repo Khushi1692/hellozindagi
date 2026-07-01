@@ -194,7 +194,7 @@ const News = () => {
     <>
       {/* ✅ SEO meta tags for the /news page */}
       <Helmet>
-        <title>News & Events | Hello Zindagi – Indian Australian Community</title>
+        <title>News & Events | Hello Zindagi – Australian Indian Community</title>
         <meta name="description" content="Stay updated with the latest news, cultural events, and community stories from Hello Zindagi — connecting Indian and Australian communities across Melbourne and Australia." />
         <link rel="canonical" href="https://hellozindagi.org.au/news" />
         <meta name="robots" content="index, follow" />
