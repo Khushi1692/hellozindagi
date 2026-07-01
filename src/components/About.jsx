@@ -114,7 +114,7 @@ const aboutSchema = {
       "name": "Hello Zindagi Inc",
       "url": "https://hellozindagi.org.au",
       "logo": "https://hellozindagi.org.au/favicon.ico",
-      "description": "Hello Zindagi connects Indian and Australian communities through shared values of humanity, happiness, and hope.",
+      "description": "Hello Zindagi connects Australian and Indian communities through shared values of humanity, happiness, and hope.",
       "foundingLocation": {
         "@type": "Place",
         "name": "Melbourne, Australia"
@@ -137,7 +137,7 @@ const aboutSchema = {
     <div style={{ paddingTop: 'var(--nav-height)', background: 'var(--bg-main)' }}>
       <SEO 
   title="About Us | Hello Zindagi – Australian Indian Community"
-  description="Learn about Hello Zindagi Inc — our vision to unite Indian and Australian communities through culture, events, and shared values of humanity, happiness and hope."
+  description="Learn about Hello Zindagi Inc — our vision to unite Australian and Indian communities through culture, events, and shared values of humanity, happiness and hope."
   url="https://hellozindagi.org.au/about"
   keywords="Hello Zindagi about, Indian community Australia, multicultural organisation Melbourne, Indo-Australian community, Vision, Mission, Radio, Integration"
   schemaMarkup={aboutSchema}
@@ -225,7 +225,7 @@ const aboutSchema = {
             </div>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', color: 'var(--primary)', fontWeight: 700 }}>Vision Statement</h3>
             <p style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.8, fontStyle: 'italic' }}>
-              "To create a harmonious and inclusive Australia where Indian and Australian communities connect through shared values of humanity, happiness, and hope—fostering belonging, resilience, and cultural pride for generations to come."
+              "To create a harmonious and inclusive Australia where Australian and Indian communities connect through shared values of humanity, happiness, and hope—fostering belonging, resilience, and cultural pride for generations to come."
             </p>
           </motion.div>
         </div>

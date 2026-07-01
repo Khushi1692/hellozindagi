@@ -10,7 +10,7 @@ export default defineConfig({
       inject: {
         data: {
           title: 'Hello Zindagi | Australian Indian Community Organisation',
-          description: 'Hello Zindagi connects Indian and Australian communities through culture, shared values, and support. Find events, news, and resources for Indians living in Australia.',
+          description: 'Hello Zindagi connects Australian and Indian communities through culture, shared values, and support. Find events, news, and resources for Indians living in Australia.',
         }
       }
     })
