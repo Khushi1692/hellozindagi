@@ -8,8 +8,20 @@ import diwali from "../assets/diwali.webp";
 import youth_dance from "../assets/youth_dance.webp";
 import multicultural from "../assets/multicultural.png";
 import womensDayVideo from "../assets/womensDayVideo.mp4";
+import jewish_museum from "../assets/jewish_museum.jpeg";
 
 const newsItems = [
+  { 
+    id: 7, 
+    date: 'July 26, 2026',
+    isoDate: '2026-07-26',
+    title: 'Jewish Museum Visit – A Journey of Learning, Understanding and Connection', 
+    excerpt: 'On 26 July 2026, Hello Zindagi organised a visit to the Jewish Museum of Australia for a meaningful day of learning and dialogue. Participants explored Jewish traditions, history, and the ZAHALKAWORLD exhibition, reinforcing our commitment to building bridges across communities and celebrating our shared humanity.',
+    category: 'Community',
+    img: jewish_museum,
+    imgAlt: 'A group visit to the Jewish Museum of Australia for learning and connection',
+    author: 'Hello Zindagi',
+  },
   { 
     id: 6, 
     date: 'June 21, 2026',

@@ -19,4 +19,4 @@ git commit -m "changes for all page seo" || exit 1
 echo "Pushing to repo..."
 git push || exit 1
 
-echo "Deployment and routing setup complete!"
+echo "chnages in seo"
