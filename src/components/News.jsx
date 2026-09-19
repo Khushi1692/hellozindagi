@@ -9,8 +9,21 @@ import youth_dance from "../assets/youth_dance.webp";
 import multicultural from "../assets/multicultural.png";
 import womensDayVideo from "../assets/womensDayVideo.mp4";
 import jewish_museum from "../assets/jewish_museum.jpeg";
+import hindi_diwas from "../assets/hindi_diwas.jpeg";
 
 const newsItems = [
+  { 
+    id: 8, 
+    date: 'September 13, 2026',
+    isoDate: '2026-09-13',
+    title: 'Hindi Diwas 2026', 
+    excerpt: 'Hindi Diwas 2026 was celebrated at Knox Library with a vibrant gathering of families and community members. The event featured the launch of Chisel My Way Out by Dr Anamika Sharma, poetry presentations, and the Vishisht Hindi Seva Samman, celebrating Hindi as a bridge across Australia’s multicultural community.',
+    category: 'Events',
+    img: hindi_diwas,
+    imgAlt: 'Hindi Diwas 2026 celebration at Knox Library',
+    imgPosition: 'center 20%',
+    author: 'Hello Zindagi',
+  },
   { 
     id: 7, 
     date: 'July 26, 2026',
