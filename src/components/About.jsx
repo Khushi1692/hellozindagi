@@ -7,7 +7,6 @@ import SEO from './SEO';
 import presidentImg from "../assets/president.webp";
 import secretaryImg from "../assets/secretary.webp";
 import boardMemberImg from "../assets/board_member.webp";
-import vicePresidentImg from "../assets/vice_president.webp";
 import treasurerImg from "../assets/treasurer.webp";
 
 const About = () => {
@@ -47,18 +46,6 @@ const About = () => {
         "Ruchi Sharma is a passionate community leader, cultural advocate, and radio host committed to building stronger, more inclusive communities through conversation, connection, and collaboration.",
         "Deeply driven by the philosophy of HuHaHo — Human Happiness & Hope, Ruchi is a Co-Founder of HuHaHo, a holistic wellbeing initiative that encourages people to stay happy while keeping hope alive.",
         "With a natural ability to connect people and ideas, Ruchi believes in the power of storytelling, cultural exchange, and grassroots leadership. Her work continues to inspire communities to celebrate diversity, build empathy, and strengthen the social fabric that binds us all."
-      ]
-    },
-    {
-      name: "Bina Shah",
-      role: "Vice President ",
-      image: vicePresidentImg,
-      accentColor: "#4f46e5",
-      accentBg: "#e0e7ff",
-      photoPosition: "center 20%",
-      bio: [
-        "Ms. Bina Shah is the Chief Operating Officer of IAEC Education | IAEC Migration, bringing over 30 years of experience in international education and migration. Her ethical and dynamic approach ensures high standards in student counselling, visa services, and partner engagement, consistently fostering student success and satisfaction.",
-        "Recognised as a trusted leader and communicator, Bina has been instrumental in developing robust policies and procedures to guide students ethically, ensuring authenticity, retention, and long-term academic and career success. She has positively impacted thousands of students' lives, helping them navigate international education pathways with clarity and confidence.",
       ]
     },
     {
